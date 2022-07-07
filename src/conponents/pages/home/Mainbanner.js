@@ -93,7 +93,7 @@ export const Mainbanner = () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        style={{ width: "1920px", height: "80vh" }}
+        style={{ height: "80vh" }}
       >
         <SwiperSlide
           style={{
