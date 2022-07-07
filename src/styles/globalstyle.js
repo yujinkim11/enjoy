@@ -21,7 +21,7 @@ export const GlobalStyled = createGlobalStyle`
         font-family: 'Noto Sans KR', sans-serif;
         background-color: ${mainStyle.bgColor};
         color: ${mainStyle.color};
-        letter-spacing: -1px;
+        letter-spacing: -2px;
         word-break: keep-all;
     }
 
