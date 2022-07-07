@@ -5,7 +5,7 @@ import styled from "styled-components";
 const ConImg = styled.div`
   width: 350px;
   height: 250px;
-  background-color: beige;
+  background-color: #7d7d7d;
   margin-bottom: 200px;
 `;
 

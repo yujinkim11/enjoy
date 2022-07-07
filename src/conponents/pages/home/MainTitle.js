@@ -3,6 +3,7 @@ import { mainStyle } from "../../../styles/globalstyle";
 
 const Title = styled.h3`
   font-size: 30px;
+  font-weight: 500;
   span {
     color: ${mainStyle.color};
     &:nth-child(1) {
