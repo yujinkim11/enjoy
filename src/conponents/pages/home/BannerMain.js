@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { mainStyle } from "../../../styles/globalstyle";
 import { RoundBox } from "./RoundBox";
-import { RoundCon } from "./RoundCon";
 
 const SubMainWrap = styled.div`
   padding: ${mainStyle.padding};
@@ -114,6 +113,7 @@ export const BannerMain = () => {
           </p>
         </RoundContent>
       </RoundWrap>
+      <RoundBox />
       <RoundBox />
     </>
   );
