@@ -2,6 +2,8 @@ import { faBookmark, faHeartbeat } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { mainStyle } from "../../../styles/globalstyle";
+import { RoundBox } from "./RoundBox";
+import { RoundCon } from "./RoundCon";
 
 const SubMainWrap = styled.div`
   padding: ${mainStyle.padding};
@@ -67,7 +69,7 @@ const RoundTitle = styled.h3`
     margin-right: 20px;
   }
 `;
-const RoundCon = styled.p`
+const RoundContent = styled.p`
   width: 600px;
   line-height: 40px;
   font-size: 25px;
@@ -105,13 +107,14 @@ export const BannerMain = () => {
             <FontAwesomeIcon icon={faBookmark} />
           </p>
         </RoundTitle>
-        <RoundCon>
+        <RoundContent>
           <p>
             맥주를 부르는 밤 Feat. 테라스 방콕의 밤을 시원~하게 적실 현지
             맥주&얼음, 각종 안주까지 풀세팅 BUT, 지락실 사전에 공짜는 없다!
           </p>
-        </RoundCon>
+        </RoundContent>
       </RoundWrap>
+      <RoundBox />
     </>
   );
 };
