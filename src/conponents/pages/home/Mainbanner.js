@@ -79,6 +79,11 @@ const PlayBox = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 25px;
+  cursor: pointer;
+  :hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 1s;
+  }
   p {
     margin-left: 10px;
   }
