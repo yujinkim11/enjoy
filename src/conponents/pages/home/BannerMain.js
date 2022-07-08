@@ -1,9 +1,11 @@
-// import styled from "styled-components";
+import styled from "styled-components";
 
-// // const BannerMain = styled.div`
-//   width: 100%;
-// `;
+const SubMain = styled.div``;
 
-// export const BannerMain = () => {
-//   return <div>서브입니당 </div>;
-// };
+export const BannerMain = () => {
+  return (
+    <SubMain>
+      <div>어쩌다 사장 올라갈것</div>
+    </SubMain>
+  );
+};

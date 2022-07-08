@@ -8,6 +8,7 @@ import { Hot } from "./conponents/pages/hot/Hot";
 import { NotFound } from "./conponents/pages/NotFound";
 import { Header } from "./conponents/Header";
 import { Footer } from "./conponents/Footer";
+import { BannerMain } from "./conponents/pages/home/BannerMain";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/movie" element={<Movie />} />
           <Route path="/hot" element={<Hot />} />
           <Route path="/*" element={<NotFound />} />
+          <Route path="/bannermain" element={<BannerMain />} />
         </Routes>
         <Footer />
       </Router>

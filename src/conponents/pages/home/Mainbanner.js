@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const MainbannerWrap = styled.div`
   height: 80vh;
@@ -119,10 +120,12 @@ export const Mainbanner = () => {
               <br />
               사건들을 해결하며 진정한 변호사로 성장하는 휴먼 법정물
             </Con>
-            <PlayBox>
-              <FontAwesomeIcon icon={faPlay} />
-              <p>보러가기</p>
-            </PlayBox>
+            <Link to={"/BannerMain"}>
+              <PlayBox>
+                <FontAwesomeIcon icon={faPlay} />
+                <p>보러가기</p>
+              </PlayBox>
+            </Link>
           </ConWrap>
         </SwiperSlide>
         <SwiperSlide>2</SwiperSlide>
