@@ -6,12 +6,15 @@ import { TvProgram } from "./conponents/pages/tvprogram/TvProgram";
 import { Movie } from "./conponents/pages/movie/Movie";
 import { Hot } from "./conponents/pages/hot/Hot";
 import { NotFound } from "./conponents/pages/NotFound";
+import { Header } from "./conponents/Header";
+import { Footer } from "./conponents/Footer";
 
 function App() {
   return (
     <HelmetProvider>
       <Router>
         <GlobalStyled />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tvprogram" element={<TvProgram />} />
@@ -19,6 +22,7 @@ function App() {
           <Route path="/hot" element={<Hot />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </Router>
     </HelmetProvider>
   );
