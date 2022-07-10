@@ -1,5 +1,6 @@
 import { faBookmark, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mainStyle } from "../../../styles/globalstyle";
 import { RoundBox } from "./RoundBox";
@@ -98,7 +99,9 @@ export const BannerMain = () => {
               버라이어티가 시작된다!
             </p>
           </Content>
-          <PlayBox>바로 재생</PlayBox>
+          <Link to={"/BannerPlay"}>
+            <PlayBox>바로 재생</PlayBox>
+          </Link>
         </ConWrap>
         <Poster></Poster>
       </SubMainWrap>
@@ -121,6 +124,8 @@ export const BannerMain = () => {
         <RoundInfo>회차 정보</RoundInfo>
       </RoundWrap>
 
+      <RoundBox />
+      <RoundBox />
       <RoundBox />
       <RoundBox />
     </>
