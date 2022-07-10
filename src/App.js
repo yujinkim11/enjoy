@@ -9,6 +9,7 @@ import { NotFound } from "./conponents/pages/NotFound";
 import { Header } from "./conponents/Header";
 import { Footer } from "./conponents/Footer";
 import { BannerMain } from "./conponents/pages/home/BannerMain";
+import { BannerPlay } from "./conponents/pages/home/BannerPlay";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/hot" element={<Hot />} />
           <Route path="/*" element={<NotFound />} />
           <Route path="/bannermain" element={<BannerMain />} />
+          <Route path="/bannerplay" element={<BannerPlay />} />
         </Routes>
         <Footer />
       </Router>

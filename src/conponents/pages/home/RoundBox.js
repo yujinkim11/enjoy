@@ -10,10 +10,6 @@ const AllWrap = styled.div`
   display: flex;
 `;
 
-const Title = styled.div`
-  font-size: 30px;
-  margin-bottom: 50px;
-`;
 const BoxWrap = styled.div`
   display: flex;
 `;
@@ -41,7 +37,6 @@ const Content = styled.p`
 export const RoundBox = () => {
   return (
     <RoundBoxWrap>
-      <Title>회차 정보</Title>
       <AllWrap>
         <BoxWrap>
           <Box></Box>

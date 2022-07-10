@@ -1,4 +1,4 @@
-import { faBookmark, faHeartbeat } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { mainStyle } from "../../../styles/globalstyle";
@@ -74,6 +74,12 @@ const RoundContent = styled.p`
   font-size: 25px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 200px;
+`;
+
+const RoundInfo = styled.h3`
+  font-size: 30px;
+  font-weight: 500;
 `;
 
 export const BannerMain = () => {
@@ -100,7 +106,7 @@ export const BannerMain = () => {
         <RoundTitle>
           <h3>2. 뿅뿅 지구오락실 2화</h3>
           <p>
-            <FontAwesomeIcon icon={faHeartbeat} />
+            <FontAwesomeIcon icon={faHeart} />
           </p>
           <p>
             <FontAwesomeIcon icon={faBookmark} />
@@ -112,7 +118,9 @@ export const BannerMain = () => {
             맥주&얼음, 각종 안주까지 풀세팅 BUT, 지락실 사전에 공짜는 없다!
           </p>
         </RoundContent>
+        <RoundInfo>회차 정보</RoundInfo>
       </RoundWrap>
+
       <RoundBox />
       <RoundBox />
     </>
