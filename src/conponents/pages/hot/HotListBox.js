@@ -8,11 +8,12 @@ const ListBoxWrap = styled.div`
   justify-content: space-between;
 `;
 const Box = styled.div`
-  width: 390px;
+  width: 370px;
   height: 492px;
   background-color: #5d5d5d;
   :hover {
-    transform: rotateZ("angle");
+    transform: scale(1.1, 1.1);
+    transition: 0.5s;
   }
 `;
 

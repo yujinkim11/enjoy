@@ -38,9 +38,6 @@ export const HotList = () => {
         <HotBar></HotBar>
       </HotListWrap>
       <HotListBox />
-      <HotListBox />
-      <HotListBox />
-      <HotListBox />
     </>
   );
 };
