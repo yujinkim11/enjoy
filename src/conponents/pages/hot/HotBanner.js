@@ -4,6 +4,7 @@ import { mainStyle } from "../../../styles/globalstyle";
 const BannerWrap = styled.div`
   width: 100%;
   height: 60vh;
+  background-color: #292929;
   display: flex;
   align-items: flex-end;
   padding: ${mainStyle.padding};

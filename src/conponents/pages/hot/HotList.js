@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HotListBox } from "./HotListBox";
 
 const HotListWrap = styled.div`
   display: flex;
@@ -27,13 +28,19 @@ const HotBar = styled.div`
 
 export const HotList = () => {
   return (
-    <HotListWrap>
-      <HotCategoryWrap>
-        <HotCategory>
-          <span>예능</span> <span>드라마</span> <span>영화</span>
-        </HotCategory>
-      </HotCategoryWrap>
-      <HotBar></HotBar>
-    </HotListWrap>
+    <>
+      <HotListWrap>
+        <HotCategoryWrap>
+          <HotCategory>
+            <span>예능</span> <span>드라마</span> <span>영화</span>
+          </HotCategory>
+        </HotCategoryWrap>
+        <HotBar></HotBar>
+      </HotListWrap>
+      <HotListBox />
+      <HotListBox />
+      <HotListBox />
+      <HotListBox />
+    </>
   );
 };
