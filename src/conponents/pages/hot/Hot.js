@@ -1,3 +1,5 @@
+import { HotBabnner } from "./HotBanner";
+
 export const Hot = () => {
-  return <div>HOTHOTHOT</div>;
+  return <HotBabnner />;
 };
