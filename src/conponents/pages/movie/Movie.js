@@ -24,6 +24,7 @@ const CategoryWrap = styled.div`
   font-size: 30px;
   font-weight: 700;
 `;
+
 const CategoryBar = styled.div`
   width: 440px;
   height: 5px;
@@ -35,13 +36,13 @@ export const Movie = () => {
   return (
     <MovieWrap>
       <MovieTitle>
-        <h3>TV프로그램</h3>
+        <h3>영화</h3>
       </MovieTitle>
       <MovieCategory>
         <CategoryWrap>
           <span>전체</span>
-          <span>드라마</span>
-          <span>예능</span>
+          <span>한국영화</span>
+          <span>해외영화</span>
         </CategoryWrap>
         <CategoryBar></CategoryBar>
       </MovieCategory>
