@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SearchBox } from "./SearchBox";
 
 const SearchWrap = styled.div`
   display: flex;
@@ -18,6 +19,7 @@ const SearchTitle = styled.div`
     font-weight: 500;
     color: #707070;
     margin-top: 30px;
+    margin-bottom: 100px;
   }
 `;
 
@@ -28,6 +30,7 @@ export const Search = () => {
         <h3>'어쩌다 사장'</h3>
         <p>에 관련된 검색 결과입니다.</p>
       </SearchTitle>
+      <SearchBox />
     </SearchWrap>
   );
 };
