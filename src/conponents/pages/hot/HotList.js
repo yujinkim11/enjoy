@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mainStyle } from "../../../styles/globalstyle";
 import { HotListBox } from "./HotListBox";
 
 const HotListWrap = styled.div`
@@ -8,7 +9,6 @@ const HotListWrap = styled.div`
 `;
 const HotCategoryWrap = styled.div`
   height: 130px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +26,12 @@ const HotBar = styled.div`
   margin-top: -30px;
 `;
 
+const HotChoiceBar = styled.div`
+  width: 20%;
+  height: 5px;
+  background-color: ${mainStyle.mainColor};
+`;
+
 export const HotList = () => {
   return (
     <>
@@ -35,7 +41,9 @@ export const HotList = () => {
             <span>예능</span> <span>드라마</span> <span>영화</span>
           </HotCategory>
         </HotCategoryWrap>
-        <HotBar></HotBar>
+        <HotBar>
+          <HotChoiceBar />
+        </HotBar>
       </HotListWrap>
       <HotListBox />
     </>

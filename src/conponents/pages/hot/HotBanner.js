@@ -8,7 +8,7 @@ const BannerWrap = styled.div`
   display: flex;
   align-items: flex-end;
   padding: ${mainStyle.padding};
-  margin-bottom: 100px;
+  margin: 100px 0;
 `;
 const HotPoster = styled.div`
   width: 480px;

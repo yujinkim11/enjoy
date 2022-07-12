@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { mainStyle } from "../../../styles/globalstyle";
+import { MovieList } from "./MovieList";
 
 const MovieWrap = styled.div`
   padding: ${mainStyle.padding};
-  margin-top: 50px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,6 +33,12 @@ const CategoryBar = styled.div`
   margin-top: 30px;
 `;
 
+const ChoiceBar = styled.div`
+  width: 20%;
+  height: 5px;
+  background-color: ${mainStyle.mainColor};
+`;
+
 export const Movie = () => {
   return (
     <MovieWrap>
@@ -44,8 +51,11 @@ export const Movie = () => {
           <span>한국영화</span>
           <span>해외영화</span>
         </CategoryWrap>
-        <CategoryBar></CategoryBar>
+        <CategoryBar>
+          <ChoiceBar />
+        </CategoryBar>
       </MovieCategory>
+      <MovieList />
     </MovieWrap>
   );
 };

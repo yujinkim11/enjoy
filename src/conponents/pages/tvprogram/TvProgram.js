@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { mainStyle } from "../../../styles/globalstyle";
+import { TvListBox } from "./TvListBox";
 
 const TvProgramWrap = styled.div`
   padding: ${mainStyle.padding};
-  margin-top: 50px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,6 +32,12 @@ const CategoryBar = styled.div`
   margin-top: 30px;
 `;
 
+const ChoiceBar = styled.div`
+  width: 20%;
+  height: 5px;
+  background-color: ${mainStyle.mainColor};
+`;
+
 export const TvProgram = () => {
   return (
     <TvProgramWrap>
@@ -43,8 +50,11 @@ export const TvProgram = () => {
           <span>드라마</span>
           <span>예능</span>
         </CategoryWrap>
-        <CategoryBar></CategoryBar>
+        <CategoryBar>
+          <ChoiceBar />
+        </CategoryBar>
       </TvProgramCategory>
+      <TvListBox />
     </TvProgramWrap>
   );
 };

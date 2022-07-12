@@ -10,6 +10,10 @@ const HeaderWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
 `;
 
 const Logo = styled.div`
@@ -18,6 +22,7 @@ const Logo = styled.div`
 `;
 
 const MenuWrap = styled.div`
+  margin-left: 100px;
   display: flex;
   justify-content: left;
   align-items: center;
