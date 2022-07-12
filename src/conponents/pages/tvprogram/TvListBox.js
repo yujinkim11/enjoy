@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mainStyle } from "../../../styles/globalstyle";
 
 const TvListBoxWrap = styled.div`
   width: 100%;
@@ -7,6 +8,9 @@ const TvListTitle = styled.h3`
   font-size: 30px;
   font-weight: 500;
   margin: 50px 0;
+  span {
+    color: ${mainStyle.mainColor};
+  }
 `;
 const ListWrap = styled.div`
   display: flex;
@@ -25,7 +29,10 @@ const TvPrograms = styled.div`
 export const TvListBox = (props) => {
   return (
     <TvListBoxWrap>
-      <TvListTitle>{props.tvcate}</TvListTitle>
+      <TvListTitle>
+        <span>{props.popular}</span>
+        {props.tvcate}
+      </TvListTitle>
       <ListWrap>
         <TvPrograms />
         <TvPrograms />

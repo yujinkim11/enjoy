@@ -55,8 +55,8 @@ export const Movie = () => {
           <ChoiceBar />
         </CategoryBar>
       </MovieCategory>
-      <MovieListBox moviecate="인기 영화" />
-      <MovieListBox moviecate="신작" />
+      <MovieListBox popular="TOP " moviecate="인기 영화" />
+      <MovieListBox moviecate="최신작" />
       <MovieListBox moviecate="시리즈" />
       <MovieListBox moviecate="코미디" />
       <MovieListBox moviecate="액션" />

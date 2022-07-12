@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mainStyle } from "../../../styles/globalstyle";
 
 const MovieListWrap = styled.div`
   width: 100%;
@@ -7,6 +8,9 @@ const MovieListTitle = styled.h3`
   font-size: 30px;
   font-weight: 500;
   margin: 50px 0;
+  span {
+    color: ${mainStyle.mainColor};
+  }
 `;
 const ListWrap = styled.div`
   display: flex;
@@ -24,7 +28,10 @@ const Movies = styled.div`
 export const MovieListBox = (props) => {
   return (
     <MovieListWrap>
-      <MovieListTitle>{props.moviecate}</MovieListTitle>
+      <MovieListTitle>
+        <span>{props.popular}</span>
+        {props.moviecate}
+      </MovieListTitle>
       <ListWrap>
         <Movies />
         <Movies />

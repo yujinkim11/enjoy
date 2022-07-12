@@ -73,8 +73,9 @@ const Con = styled.p`
 `;
 
 const PlayBox = styled.div`
-  width: 260px;
-  height: 64px;
+  width: 360px;
+  height: 80px;
+  border-radius: 10px;
   border: 2px solid white;
   display: flex;
   justify-content: center;
