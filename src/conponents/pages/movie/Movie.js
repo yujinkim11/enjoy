@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { mainStyle } from "../../../styles/globalstyle";
-import { MovieList } from "./MovieList";
+import { MovieListBox } from "./MovieListBox";
 
 const MovieWrap = styled.div`
   padding: ${mainStyle.padding};
@@ -55,7 +55,11 @@ export const Movie = () => {
           <ChoiceBar />
         </CategoryBar>
       </MovieCategory>
-      <MovieList />
+      <MovieListBox moviecate="인기 영화" />
+      <MovieListBox moviecate="신작" />
+      <MovieListBox moviecate="시리즈" />
+      <MovieListBox moviecate="코미디" />
+      <MovieListBox moviecate="액션" />
     </MovieWrap>
   );
 };

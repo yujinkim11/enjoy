@@ -1,4 +1,3 @@
-import { defaultProps } from "spinners-react/lib/esm/helpers";
 import styled from "styled-components";
 
 const MovieListWrap = styled.div`
@@ -7,7 +6,7 @@ const MovieListWrap = styled.div`
 const MovieListTitle = styled.h3`
   font-size: 30px;
   font-weight: 500;
-  margin-bottom: 50px;
+  margin: 50px 0;
 `;
 const ListWrap = styled.div`
   display: flex;
@@ -22,10 +21,10 @@ const Movies = styled.div`
     transition: 0.5s;
   }
 `;
-export const MovieList = () => {
+export const MovieListBox = (props) => {
   return (
     <MovieListWrap>
-      <MovieListTitle></MovieListTitle>
+      <MovieListTitle>{props.moviecate}</MovieListTitle>
       <ListWrap>
         <Movies />
         <Movies />

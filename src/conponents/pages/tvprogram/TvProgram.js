@@ -54,7 +54,11 @@ export const TvProgram = () => {
           <ChoiceBar />
         </CategoryBar>
       </TvProgramCategory>
-      <TvListBox />
+      <TvListBox tvcate="인기 TV프로그램" />
+      <TvListBox tvcate="새로 시작한 프로그램" />
+      <TvListBox tvcate="한국 드라마" />
+      <TvListBox tvcate="의학 드라마" />
+      <TvListBox tvcate="로맨스 드라마" />
     </TvProgramWrap>
   );
 };
