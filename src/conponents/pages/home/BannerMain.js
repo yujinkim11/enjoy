@@ -27,7 +27,6 @@ const Info = styled.div`
 const Poster = styled.div`
   width: 350px;
   height: 500px;
-  background-color: antiquewhite;
   position: absolute;
   right: 150px;
   background: url(https://image.tving.com/upload/cms/caip/CAIP0900/P001615344.jpeg/dims/resize/F_webp,480)
@@ -78,7 +77,7 @@ const RoundContent = styled.p`
   margin-bottom: 200px;
 `;
 
-const RoundInfo = styled.h3`
+const RoundInfo = styled.p`
   font-size: 30px;
   font-weight: 500;
 `;

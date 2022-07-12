@@ -11,6 +11,7 @@ import { Footer } from "./conponents/Footer";
 import { BannerMain } from "./conponents/pages/home/BannerMain";
 import { BannerPlay } from "./conponents/pages/home/BannerPlay";
 import { Search } from "./conponents/pages/search/Search";
+import { Detail } from "./conponents/pages/detail/Detail";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/hot" element={<Hot />} />
           <Route path="/search" element={<Search />} />
           <Route path="/*" element={<NotFound />} />
+          <Route path="/detail" element={<Detail />} />
           <Route path="/bannermain" element={<BannerMain />} />
           <Route path="/bannerplay" element={<BannerPlay />} />
         </Routes>

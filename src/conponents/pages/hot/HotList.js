@@ -6,6 +6,7 @@ const HotListWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 `;
 const HotCategoryWrap = styled.div`
   height: 130px;
