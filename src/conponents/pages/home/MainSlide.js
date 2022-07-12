@@ -14,23 +14,23 @@ export const MainSlide = () => {
     <Swiper spaceBetween={65} slidesPerView={4}>
       <SwiperSlide></SwiperSlide>
       <SwiperSlide>
-        <ConImg></ConImg>
+        <ConImg />
       </SwiperSlide>
       <SwiperSlide>
-        <ConImg></ConImg>
+        <ConImg />
       </SwiperSlide>
       <SwiperSlide>
-        <ConImg></ConImg>
+        <ConImg />
       </SwiperSlide>
       <SwiperSlide>
-        <ConImg></ConImg>
+        <ConImg />
       </SwiperSlide>
 
       <SwiperSlide>
-        <ConImg></ConImg>
+        <ConImg />
       </SwiperSlide>
       <SwiperSlide>
-        <ConImg></ConImg>
+        <ConImg />
       </SwiperSlide>
     </Swiper>
   );
