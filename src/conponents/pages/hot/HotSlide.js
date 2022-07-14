@@ -11,6 +11,26 @@ const SlideWrap = styled.div`
   width: 100%;
 `;
 
+const HotImgWrap = styled.div`
+  position: relative;
+
+  :hover {
+    h3 {
+      transition: 1s;
+      opacity: 1;
+    }
+  }
+  h3 {
+    font-size: 40px;
+    font-weight: 500;
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    opacity: 0;
+    color: rgba(255, 255, 255, 0.7);
+  }
+`;
+
 const HotImg = styled.div`
   height: 450px;
   background-color: aquamarine;
@@ -30,15 +50,21 @@ export const HotSlide = ({ hotData }) => {
         <Swiper modules={[Navigation]} spaceBetween={20} slidesPerView={4}>
           {hotData.map((hot) => (
             <SwiperSlide>
-              <HotImg
-                style={{
-                  background: `url(${
-                    hot.backdrop_path
-                      ? `${imgUrl}${hot.backdrop_path}`
-                      : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
-                  }) no-repeat center / cover`,
-                }}
-              />
+              <HotImgWrap>
+                <HotImg
+                  style={{
+                    background: `url(${
+                      hot.backdrop_path
+                        ? `${imgUrl}${hot.backdrop_path}`
+                        : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                    }) no-repeat center / cover`,
+                  }}
+                />
+                <h3>
+                  {hot.name}
+                  {hot.title}
+                </h3>
+              </HotImgWrap>
             </SwiperSlide>
           ))}
         </Swiper>
