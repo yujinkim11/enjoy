@@ -41,6 +41,8 @@ const ChoiceBar = styled.div`
   background-color: ${mainStyle.mainColor};
 `;
 
+const Genre = styled.p``;
+
 export const TvProgram = () => {
   const [tvpopular, setTvPopular] = useState();
   const [latest, setlatest] = useState();
@@ -60,6 +62,7 @@ export const TvProgram = () => {
         setLoading(false);
       } catch (error) {}
     };
+    console.log(tvpopular);
     TvData();
   }, []);
 
@@ -68,25 +71,29 @@ export const TvProgram = () => {
       {loading ? (
         <Loading />
       ) : (
-        <TvProgramWrap>
-          <TvProgramTitle>
-            <h3>TV프로그램</h3>
-          </TvProgramTitle>
-          <TvProgramCategory>
-            <CategoryWrap>
-              <span>전체</span>
-              <span>드라마</span>
-              <span>예능</span>
-            </CategoryWrap>
-            <CategoryBar>
-              <ChoiceBar />
-            </CategoryBar>
-          </TvProgramCategory>
-          <TvSlide data={tvpopular} red="TOP" title=" 인기 프로그램" />
-          <TvSlide data={latest} title="새로 시작한 프로그램" />
-          {/* <TvSlide data={tvpopular} title="한국 드라마" /> */}
-          {/* <TvSlide data={tvpopular} title="애니메이션" /> */}
-        </TvProgramWrap>
+        <>
+          {tvpopular && (
+            <TvProgramWrap>
+              <TvProgramTitle>
+                <h3>TV프로그램</h3>
+              </TvProgramTitle>
+              <TvProgramCategory>
+                <CategoryWrap>
+                  <span>전체</span>
+                  <span>드라마</span>
+                  <span>영화</span>
+                </CategoryWrap>
+                <CategoryBar>
+                  <ChoiceBar />
+                </CategoryBar>
+              </TvProgramCategory>
+              <TvSlide data={tvpopular} red="TOP" title=" 인기 프로그램" />
+              <TvSlide data={latest} title="새로 시작한 프로그램" />
+              {/* <TvSlide data={tvpopular} title="한국 드라마" /> */}
+              {/* <TvSlide data={tvpopular} title="애니메이션" /> */}
+            </TvProgramWrap>
+          )}
+        </>
       )}
     </>
   );

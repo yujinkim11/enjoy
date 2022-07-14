@@ -10,7 +10,6 @@ import { Loading } from "../../Loading";
 import { imgUrl } from "../../../constants/constants";
 
 const SubMainWrap = styled.div`
-  padding: ${mainStyle.padding};
   width: 100%;
   height: 80vh;
   display: flex;
@@ -18,7 +17,18 @@ const SubMainWrap = styled.div`
   position: relative;
 `;
 
-const ConWrap = styled.div``;
+const BgPoster = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  filter: blur(4px);
+`;
+
+const ConWrap = styled.div`
+  padding: ${mainStyle.padding};
+`;
 const Title = styled.div`
   font-size: 80px;
   font-weight: 900;
@@ -106,15 +116,16 @@ export const Banner = () => {
         <Loading />
       ) : (
         <>
-          <SubMainWrap
-            style={{
-              background: `url(${imgUrl}${popular[0].backdrop_path}) no-repeat center / cover`,
-            }}
-          >
+          <SubMainWrap>
+            <BgPoster
+              style={{
+                background: `url(${imgUrl}${popular[0].backdrop_path}) no-repeat center / cover`,
+              }}
+            />
             <ConWrap>
               <Title>{popular[0].name}</Title>
               <Info>
-                <p>15+ | 예능 | {popular[0].first_air_date}</p>
+                <p>15+ |장르| {popular[0].first_air_date}</p>
               </Info>
               <Content>
                 <p>{popular[0].overview.slice(0, 80) + "..."}</p>

@@ -21,6 +21,11 @@ const TvTitle = styled.h3`
 const TvImg = styled.div`
   height: 450px;
   margin-top: 50px;
+  :hover {
+    transform: scale(1.05, 1.05);
+    transition: 0.5s;
+    opacity: 0.5;
+  }
 `;
 
 export const TvSlide = ({ data, red, title }) => {

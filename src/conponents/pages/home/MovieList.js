@@ -10,7 +10,7 @@ const MvWrap = styled.div`
   margin-top: 100px;
 `;
 const Title = styled.div`
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 900;
   span {
     color: ${mainStyle.mainColor};
@@ -27,7 +27,7 @@ const MvImgWrap = styled.div`
     }
   }
   h3 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 900;
     position: absolute;
     top: 200px;

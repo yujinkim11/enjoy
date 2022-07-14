@@ -69,14 +69,22 @@ export const Home = () => {
         <Loading />
       ) : (
         <>
-          <Mainbanner play={now} upcoming={mvupcome} tvPopular={tvpopular} />
+          {mvupcome && (
+            <>
+              <Mainbanner
+                play={now}
+                upcoming={mvupcome}
+                tvPopular={tvpopular}
+              />
 
-          <Container>
-            <MovieList movie={mvupcome} red="새로운" title=" 영화" />
-            <MovieList movie={mvtop} red="인기" title=" 영화" />
-            <TvList tv={latest} red="새로운" title=" TV프로그램" />
-            <TvList tv={tvtop} red="인기" title="TV프로그램" />
-          </Container>
+              <Container>
+                <MovieList movie={mvupcome} red="새로운" title=" 영화" />
+                <MovieList movie={mvtop} red="인기" title=" 영화" />
+                <TvList tv={latest} red="새로운" title=" TV프로그램" />
+                <TvList tv={tvtop} red="인기" title="TV프로그램" />
+              </Container>
+            </>
+          )}
         </>
       )}
     </>

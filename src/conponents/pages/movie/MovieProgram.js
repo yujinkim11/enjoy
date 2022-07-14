@@ -70,23 +70,27 @@ export const MovieProgram = (red, title) => {
       {loading ? (
         <Loading />
       ) : (
-        <MvProgramWrap>
-          <MvProgramTitle>
-            <h3>영화</h3>
-          </MvProgramTitle>
-          <MvProgramCategory>
-            <CategoryWrap>
-              <span>전체</span>
-              <span>드라마</span>
-              <span>예능</span>
-            </CategoryWrap>
-            <CategoryBar>
-              <ChoiceBar />
-            </CategoryBar>
-          </MvProgramCategory>
-          <MvSlide mvdata={popular} red="TOP" moviecate=" 인기 프로그램" />
-          <MvSlide mvdata={top} moviecate="개봉 예정 영화" />
-        </MvProgramWrap>
+        <>
+          {popular && (
+            <MvProgramWrap>
+              <MvProgramTitle>
+                <h3>영화</h3>
+              </MvProgramTitle>
+              <MvProgramCategory>
+                <CategoryWrap>
+                  <span>전체</span>
+                  <span>드라마</span>
+                  <span>예능</span>
+                </CategoryWrap>
+                <CategoryBar>
+                  <ChoiceBar />
+                </CategoryBar>
+              </MvProgramCategory>
+              <MvSlide mvdata={popular} red="TOP" moviecate=" 인기 프로그램" />
+              <MvSlide mvdata={top} moviecate="개봉 예정 영화" />
+            </MvProgramWrap>
+          )}
+        </>
       )}
     </>
   );

@@ -18,13 +18,18 @@ const MvTitle = styled.h3`
   }
 `;
 
-const TvImg = styled.div`
+const MvImg = styled.div`
   height: 450px;
   margin-top: 50px;
+  :hover {
+    transform: scale(1.05, 1.05);
+    transition: 0.5s;
+    opacity: 0.5;
+  }
 `;
 
 export const MvSlide = ({ mvdata, red, moviecate }) => {
-  console.log(mvdata[1].backdrop_path);
+  // console.log(mvdata[1].backdrop_path);
   return (
     <SlideWrap>
       <MvTitle>
@@ -34,7 +39,7 @@ export const MvSlide = ({ mvdata, red, moviecate }) => {
       <Swiper modules={[Navigation]} spaceBetween={20} slidesPerView={4}>
         {mvdata.map((moviedata) => (
           <SwiperSlide>
-            <TvImg
+            <MvImg
               style={{
                 background: `url(${
                   moviedata.backdrop_path

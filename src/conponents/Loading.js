@@ -1,4 +1,4 @@
-import { SpinnerCircularFixed } from "spinners-react";
+import { SpinnerDotted } from "spinners-react";
 import styled from "styled-components";
 import { mainStyle } from "../styles/globalstyle";
 
@@ -12,7 +12,7 @@ const Wrap = styled.div`
 export const Loading = () => {
   return (
     <Wrap>
-      <SpinnerCircularFixed size={100} color={mainStyle.mainColor} />
+      <SpinnerDotted size={100} color={mainStyle.mainColor} />
     </Wrap>
   );
 };
