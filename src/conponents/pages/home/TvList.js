@@ -16,24 +16,32 @@ const Title = styled.div`
     color: ${mainStyle.mainColor};
   }
 `;
+
+const TvImgWrap = styled.div`
+  position: relative;
+  :hover {
+    h3 {
+      transition: 1s;
+      opacity: 1;
+    }
+  }
+  h3 {
+    font-size: 50px;
+    font-weight: 900;
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    opacity: 0;
+    color: rgba(255, 255, 255, 0.7);
+  }
+`;
+
 const TvImg = styled.div`
   height: 450px;
   margin-top: 50px;
   :hover {
     opacity: 0.5;
     transition: 0.5s;
-  }
-  position: relative;
-`;
-
-const TvTitle = styled.h3`
-  font-size: 50px;
-  position: absolute;
-  top: 45%;
-  left: 20%;
-  opacity: 0;
-  :hover {
-    opacity: 1;
   }
 `;
 
@@ -47,12 +55,14 @@ export const TvList = ({ tv, red, title }) => {
         {tv.map((play) => (
           <SwiperSlide key={play.id}>
             <Link to={`/tv_detail/${play.id}`}>
-              <TvImg
-                style={{
-                  background: `url(${imgUrl}${play.backdrop_path}) no-repeat center/cover`,
-                }}
-              />
-              <TvTitle>{play.name}</TvTitle>
+              <TvImgWrap>
+                <TvImg
+                  style={{
+                    background: `url(${imgUrl}${play.backdrop_path}) no-repeat center/cover`,
+                  }}
+                />
+                <h3>{play.name}</h3>
+              </TvImgWrap>
             </Link>
           </SwiperSlide>
         ))}

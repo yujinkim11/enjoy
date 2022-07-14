@@ -16,6 +16,27 @@ const Title = styled.div`
     color: ${mainStyle.mainColor};
   }
 `;
+
+const MvImgWrap = styled.div`
+  position: relative;
+
+  :hover {
+    h3 {
+      transition: 1s;
+      opacity: 1;
+    }
+  }
+  h3 {
+    font-size: 50px;
+    font-weight: 900;
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    opacity: 0;
+    color: rgba(255, 255, 255, 0.7);
+  }
+`;
+
 const MvImg = styled.div`
   height: 450px;
   margin-top: 50px;
@@ -35,11 +56,14 @@ export const MovieList = ({ movie, red, title }) => {
         {movie.map((play) => (
           <SwiperSlide key={play.id}>
             <Link to={`/movie_detail/${play.id}`}>
-              <MvImg
-                style={{
-                  background: `url(${imgUrl}${play.backdrop_path}) no-repeat center/cover`,
-                }}
-              />
+              <MvImgWrap>
+                <MvImg
+                  style={{
+                    background: `url(${imgUrl}${play.backdrop_path}) no-repeat center/cover`,
+                  }}
+                />
+                <h3>{play.title}</h3>
+              </MvImgWrap>
             </Link>
           </SwiperSlide>
         ))}
