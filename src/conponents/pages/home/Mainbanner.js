@@ -10,16 +10,23 @@ import "swiper/css/scrollbar";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { imgUrl } from "../../../constants/constants";
+import { mainStyle } from "../../../styles/globalstyle";
 
 const MainbannerWrap = styled.div`
-  height: 80vh;
-  background-color: #7d7d7d;
+  height: 75vh;
+  @media screen and (max-width: 500px) {
+    height: 100vh;
+  }
 `;
 
 const Title = styled.h3`
   font-size: 90px;
   font-weight: 700;
   margin-bottom: 40px;
+  @media screen and (max-width: 500px) {
+    font-size: 30px;
+    padding: ${mainStyle.moPadding};
+  }
 `;
 
 const ConWrap = styled.div`
@@ -103,7 +110,6 @@ export const Mainbanner = ({ tvPopular }) => {
         spaceBetween={50}
         slidesPerView={1}
         autoplay={{ delay: 3000 }}
-        style={{ height: "80vh" }}
       >
         <SwiperSlide
           style={{

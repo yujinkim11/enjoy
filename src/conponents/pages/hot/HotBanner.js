@@ -16,7 +16,7 @@ const PosterWrap = styled.div``;
 
 const HotPoster = styled.div`
   width: 500px;
-  height: 350px;
+  height: 500px;
   background-color: antiquewhite;
   margin-right: 50px;
 `;

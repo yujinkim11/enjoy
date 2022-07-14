@@ -14,6 +14,9 @@ const HeaderWrap = styled.div`
   top: 0;
   left: 0;
   z-index: 9;
+  @media screen and (max-width: 500px) {
+    padding: ${mainStyle.moPadding};
+  }
 `;
 
 const Logo = styled.div`
@@ -29,6 +32,9 @@ const MenuWrap = styled.div`
   i {
     color: white;
   }
+  @media screen and (max-width: 500px) {
+    margin-left: 70px;
+  }
 `;
 
 const Menu = styled.div`
@@ -37,6 +43,9 @@ const Menu = styled.div`
   font-weight: 300;
   &:nth-child(3) {
     margin-right: 900px;
+  }
+  @media screen and (max-width: 500px) {
+    margin-right: 30px;
   }
 `;
 
