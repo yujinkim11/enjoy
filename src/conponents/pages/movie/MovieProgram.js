@@ -1,11 +1,11 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { mainStyle } from "../../../styles/globalstyle";
+import { mvApi } from "../../../api";
 import { Loading } from "../../Loading";
-import { tvApi } from "../../../api";
-import { useEffect, useState } from "react";
-import { TvSlide } from "./TvSlide";
+import { MvSlide } from "./MvSlide";
 
-const TvProgramWrap = styled.div`
+const MvProgramWrap = styled.div`
   padding: ${mainStyle.padding};
   margin-top: 100px;
   display: flex;
@@ -13,13 +13,13 @@ const TvProgramWrap = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const TvProgramTitle = styled.h3`
+const MvProgramTitle = styled.h3`
   font-size: 60px;
   font-weight: 900;
   margin-bottom: 100px;
 `;
 
-const TvProgramCategory = styled.div``;
+const MvProgramCategory = styled.div``;
 
 const CategoryWrap = styled.div`
   width: 440px;
@@ -40,27 +40,29 @@ const ChoiceBar = styled.div`
   height: 5px;
   background-color: ${mainStyle.mainColor};
 `;
-
-export const TvProgram = () => {
-  const [tvpopular, setTvPopular] = useState();
-  const [latest, setlatest] = useState();
+export const MovieProgram = (red, title) => {
+  const [popular, setPopular] = useState();
+  const [top, setTop] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const TvData = async () => {
+    const movieData = async () => {
       try {
         const {
-          data: { results: tvpopularData },
-        } = await tvApi.popular();
-        setTvPopular(tvpopularData);
+          data: { results: popularData },
+        } = await mvApi.moviepopular();
+        setPopular(popularData);
+
         const {
-          data: { results: tvlatestData },
-        } = await tvApi.latest();
-        setlatest(tvlatestData);
+          data: { results: TopratedData },
+        } = await mvApi.topRated();
+        setTop(TopratedData);
+        //  영화  TOP
+
         setLoading(false);
       } catch (error) {}
     };
-    TvData();
+    movieData();
   }, []);
 
   return (
@@ -68,11 +70,11 @@ export const TvProgram = () => {
       {loading ? (
         <Loading />
       ) : (
-        <TvProgramWrap>
-          <TvProgramTitle>
-            <h3>TV프로그램</h3>
-          </TvProgramTitle>
-          <TvProgramCategory>
+        <MvProgramWrap>
+          <MvProgramTitle>
+            <h3>영화</h3>
+          </MvProgramTitle>
+          <MvProgramCategory>
             <CategoryWrap>
               <span>전체</span>
               <span>드라마</span>
@@ -81,12 +83,10 @@ export const TvProgram = () => {
             <CategoryBar>
               <ChoiceBar />
             </CategoryBar>
-          </TvProgramCategory>
-          <TvSlide data={tvpopular} red="TOP" title=" 인기 프로그램" />
-          <TvSlide data={latest} title="새로 시작한 프로그램" />
-          {/* <TvSlide data={tvpopular} title="한국 드라마" /> */}
-          {/* <TvSlide data={tvpopular} title="애니메이션" /> */}
-        </TvProgramWrap>
+          </MvProgramCategory>
+          <MvSlide mvdata={popular} red="TOP" moviecate=" 인기 프로그램" />
+          <MvSlide mvdata={top} moviecate="개봉 예정 영화" />
+        </MvProgramWrap>
       )}
     </>
   );

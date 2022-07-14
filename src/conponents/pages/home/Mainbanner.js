@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar } from "swiper";
+import { Scrollbar } from "swiper";
+import { Autoplay } from "swiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -8,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { imgUrl } from "../../../constants/constants";
 
 const MainbannerWrap = styled.div`
   height: 80vh;
@@ -67,8 +69,10 @@ const Box3 = styled.div`
 `;
 
 const Con = styled.p`
+  width: 750px;
   font-size: 24px;
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
   margin: 70px 0;
 `;
 
@@ -91,37 +95,31 @@ const PlayBox = styled.div`
   }
 `;
 
-export const Mainbanner = () => {
+export const Mainbanner = ({ tvPopular }) => {
   return (
     <MainbannerWrap>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar]}
+        modules={[Scrollbar, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
         style={{ height: "80vh" }}
       >
         <SwiperSlide
           style={{
-            background: `url(https://image.ytn.co.kr/osen/2022/06/b53fbe66-01f8-445f-9b7c-dbba8014c140.jpg) no-repeat center / cover`,
-            backgroundPositionY: "-500px",
+            background: `url(${imgUrl}${tvPopular[0].backdrop_path}) no-repeat center / cover`,
           }}
         >
           <ConWrap>
-            <Title>'이상한 변호사 우영우'</Title>
+            <Title>'{tvPopular[0].name}'</Title>
+
             <BoxWrap>
               <Box1>15+</Box1>
               <Box2>드라마</Box2>
               <Box3>휴먼물</Box3>
             </BoxWrap>
-
-            <Con>
-              천재적인 두뇌와 자폐 스펙트럼을 동시에 가진 신입변호사 '우영우'가
-              <br />
-              사건들을 해결하며 진정한 변호사로 성장하는 휴먼 법정물
-            </Con>
-            <Link to={"/BannerMain"}>
+            <Con>{tvPopular[0].overview.slice(0, 70) + "..."}</Con>
+            <Link to={"/Banner"}>
               <PlayBox>
                 <FontAwesomeIcon icon={faPlay} />
                 <p>보러가기</p>
@@ -129,9 +127,50 @@ export const Mainbanner = () => {
             </Link>
           </ConWrap>
         </SwiperSlide>
-        <SwiperSlide>2</SwiperSlide>
-        <SwiperSlide>3</SwiperSlide>
-        <SwiperSlide>4</SwiperSlide>
+        <SwiperSlide
+          style={{
+            background: `url(${imgUrl}${tvPopular[1].backdrop_path}) no-repeat center / cover`,
+          }}
+        >
+          <ConWrap>
+            <Title>'{tvPopular[1].name}'</Title>
+
+            <BoxWrap>
+              <Box1>15+</Box1>
+              <Box2>드라마</Box2>
+              <Box3>휴먼물</Box3>
+            </BoxWrap>
+            <Con>{tvPopular[1].overview.slice(0, 70) + "..."}</Con>
+            <Link to={"/Banner"}>
+              <PlayBox>
+                <FontAwesomeIcon icon={faPlay} />
+                <p>보러가기</p>
+              </PlayBox>
+            </Link>
+          </ConWrap>
+        </SwiperSlide>
+        <SwiperSlide
+          style={{
+            background: `url(${imgUrl}${tvPopular[2].backdrop_path}) no-repeat center / cover`,
+          }}
+        >
+          <ConWrap>
+            <Title>'{tvPopular[2].name}'</Title>
+
+            <BoxWrap>
+              <Box1>15+</Box1>
+              <Box2>드라마</Box2>
+              <Box3>휴먼물</Box3>
+            </BoxWrap>
+            <Con>{tvPopular[2].overview.slice(0, 70) + "..."}</Con>
+            <Link to={"/Banner"}>
+              <PlayBox>
+                <FontAwesomeIcon icon={faPlay} />
+                <p>보러가기</p>
+              </PlayBox>
+            </Link>
+          </ConWrap>
+        </SwiperSlide>
       </Swiper>
     </MainbannerWrap>
   );

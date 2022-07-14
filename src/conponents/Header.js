@@ -62,7 +62,7 @@ export const Header = () => {
           <Link to={"/tvprogram"}>TV프로그램</Link>
         </Menu>
         <Menu>
-          <Link to={"/movie"}>영화</Link>
+          <Link to={"/movieprogram"}>영화</Link>
         </Menu>
         <Menu>
           <Link to={"/hot"}>HOT</Link>
