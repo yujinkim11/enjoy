@@ -8,7 +8,7 @@ import { mainStyle } from "../../../styles/globalstyle";
 const SlideWrap = styled.div`
   padding: ${mainStyle.padding};
   margin-top: 100px;
-  width: 100%;
+  width: 100%; ;
 `;
 
 const HotImgWrap = styled.div`

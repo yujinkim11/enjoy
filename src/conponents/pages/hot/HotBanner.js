@@ -6,7 +6,8 @@ import { mainStyle } from "../../../styles/globalstyle";
 const BannerWrap = styled.div`
   width: 100%;
   height: 60vh;
-  background-color: #292929;
+  background-color: #707070;
+  margin-top: 80px;
   display: flex;
   align-items: flex-end;
   padding: ${mainStyle.padding};
@@ -56,15 +57,19 @@ const CategoryBar = styled.div`
   height: 5px;
   background-color: #707070;
   margin-top: 30px;
+  position: relative;
 `;
 
 const ChoiceBar = styled.div`
   width: 20%;
   height: 5px;
+  position: absolute;
+  right: ${(props) => props.posi};
   background-color: ${mainStyle.mainColor};
 `;
 
 export const HotBabnner = ({ bndata }) => {
+  const handleClick = () => {};
   // console.log("hotbanner", bndata);
   return (
     <>
@@ -96,7 +101,10 @@ export const HotBabnner = ({ bndata }) => {
       </BannerWrap>
       <HotCategoryWrap>
         <HotCategory>
-          <span>예능</span> <span>드라마</span> <span>영화</span>
+          <span posi={"40%"} onClick={handleClick}>
+            예능
+          </span>{" "}
+          <span>드라마</span> <span>영화</span>
         </HotCategory>
         <CategoryBar>
           <ChoiceBar />
