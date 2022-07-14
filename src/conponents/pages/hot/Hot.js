@@ -44,7 +44,7 @@ export const Hot = () => {
     };
     hotData();
   }, []);
-
+  console.log(tvrated);
   return (
     <>
       {loading ? (

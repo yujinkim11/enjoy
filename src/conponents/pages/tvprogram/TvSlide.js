@@ -10,6 +10,26 @@ const SlideWrap = styled.div`
   width: 100%;
 `;
 
+const TvImgWrap = styled.div`
+  position: relative;
+
+  :hover {
+    h3 {
+      transition: 1s;
+      opacity: 1;
+    }
+  }
+  h3 {
+    font-size: 40px;
+    font-weight: 500;
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    opacity: 0;
+    color: rgba(255, 255, 255, 0.7);
+  }
+`;
+
 const TvTitle = styled.h3`
   font-size: 30px;
   font-weight: 700;
@@ -39,15 +59,18 @@ export const TvSlide = ({ data, red, title }) => {
       <Swiper modules={[Navigation]} spaceBetween={20} slidesPerView={4}>
         {data.map((tvdata) => (
           <SwiperSlide>
-            <TvImg
-              style={{
-                background: `url(${
-                  tvdata.backdrop_path
-                    ? `${imgUrl}/${tvdata.poster_path}`
-                    : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
-                }) no-repeat center / cover`,
-              }}
-            />
+            <TvImgWrap>
+              <TvImg
+                style={{
+                  background: `url(${
+                    tvdata.backdrop_path
+                      ? `${imgUrl}/${tvdata.poster_path}`
+                      : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                  }) no-repeat center / cover`,
+                }}
+              />
+              <h3>{tvdata.name}</h3>
+            </TvImgWrap>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -27,7 +27,7 @@ const TvImgWrap = styled.div`
   }
   h3 {
     font-size: 40px;
-    font-weight: 900;
+    font-weight: 500;
     position: absolute;
     top: 200px;
     left: 10px;
