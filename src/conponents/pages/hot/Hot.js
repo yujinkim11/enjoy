@@ -4,6 +4,7 @@ import { HotSlide } from "./HotSlide";
 import { mvApi, tvApi } from "../../../api";
 import { Loading } from "../../Loading";
 import styled from "styled-components";
+import { movieNum } from "../../../constants/constants";
 
 const HotWrap = styled.div``;
 

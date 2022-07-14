@@ -23,7 +23,7 @@ const BgPoster = styled.div`
   position: absolute;
   top: 0;
   z-index: -1;
-  filter: blur(4px);
+  filter: blur(5px);
 `;
 
 const ConWrap = styled.div`

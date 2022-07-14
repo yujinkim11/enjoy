@@ -4,6 +4,7 @@ import { imgUrl } from "../../../constants/constants";
 import { mainStyle } from "../../../styles/globalstyle";
 
 const BannerWrap = styled.div`
+  width: 100%;
   height: 60vh;
   background-color: #292929;
   display: flex;
@@ -14,7 +15,7 @@ const BannerWrap = styled.div`
 const PosterWrap = styled.div``;
 
 const HotPoster = styled.div`
-  width: 480px;
+  width: 500px;
   height: 350px;
   background-color: antiquewhite;
   margin-right: 50px;
