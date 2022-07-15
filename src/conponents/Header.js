@@ -10,7 +10,7 @@ const HeaderWrap = styled.div`
   height: 80px;
   padding: ${mainStyle.padding};
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   position: fixed;
   top: 0;
@@ -28,9 +28,10 @@ const Logo = styled.div`
 `;
 
 const MenuWrap = styled.div`
+  width: 100%;
   margin-left: 100px;
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   i {
     color: white;
@@ -41,12 +42,13 @@ const MenuWrap = styled.div`
 `;
 
 const Menu = styled.div`
-  margin-right: 100px;
   font-size: 18px;
   font-weight: 300;
-  &:nth-child(3) {
-    margin-right: 900px;
+  margin-left: -900px;
+  :nth-child(1) {
+    margin-left: 0px;
   }
+
   @media screen and (max-width: 500px) {
     margin-right: 30px;
   }
@@ -59,7 +61,7 @@ export const Header = () => {
 
   const handelScroll = () => {
     const sct = window.pageYOffset;
-    console.log(sct);
+    // console.log(sct);
     // => 내가 내린 스크롤값 얻어오기, var로 지정하여 사용하기
 
     if (sct > 400) {

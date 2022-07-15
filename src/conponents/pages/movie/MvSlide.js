@@ -59,14 +59,16 @@ const MvImg = styled.div`
   }
 `;
 
-const Genre = styled.div`
-  display: flex;
+const Genre = styled.ul`
   font-size: 20px;
-  .genres {
-    width: 15%;
-    height: 100%;
-    background-color: ${mainStyle.mainColor};
+  margin-bottom: 20px;
+  font-weight: 600;
+  display: flex;
+  li {
+    list-style: none;
+    margin-right: 10px;
   }
+  margin: 0 0 20px 0px;
 `;
 
 export const MvSlide = ({ mvdata, red, moviecate }) => {
@@ -94,7 +96,10 @@ export const MvSlide = ({ mvdata, red, moviecate }) => {
                 <h1>{moviedata.title}</h1>
                 <Genre>
                   {moviedata.genre_ids.map((genreid) => (
-                    <div className="genres">{genreid}</div>
+                    <li key={genreid.id} className="genres">
+                      {genreid.name}
+                      {console.log(genreid)}
+                    </li>
                   ))}
                 </Genre>
                 <p>{moviedata.vote_average}점</p>
