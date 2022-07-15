@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import { mvApi } from "../../../api";
+import { mvApi, tvApi } from "../../../api";
 import { Container } from "../../Container";
 import { Loading } from "../../Loading";
 import { PageTitle } from "../../PageTitle";
@@ -43,6 +43,7 @@ const Bg = styled.div`
 
 export const Search = () => {
   const [searchResult, setSearchResult] = useState();
+  const [tvResult, setTvResult] = useState();
 
   const [loading, setLoadig] = useState();
 
@@ -78,19 +79,20 @@ export const Search = () => {
         setSearchResult(mv);
       }
 
-      // const {
-      //   data: { results: tv },
-      // } = await tvApi.tvsearch(term);
-      // setSearchResult(tv);
+      const {
+        data: { results: tv },
+      } = await tvApi.tvsearch(term);
+      setTvResult(tv);
 
-      // if (tv.length <= 0) {
-      //   setError("result", {
-      //     message: "영화가 없어요 !",
-      //   });
-      //   // => setError("에러 이름", {message:"값"})
-      //   // => useForm에 있는 속성으로 에러를 설정할 수 있음
-      // } else {
-      //   setSearchResult(tv);}
+      if (tv.length <= 0) {
+        setError("result", {
+          message: "영화가 없어요 !",
+        });
+        // => setError("에러 이름", {message:"값"})
+        // => useForm에 있는 속성으로 에러를 설정할 수 있음
+      } else {
+        setTvResult(tv);
+      }
 
       setLoadig(false);
     } catch (error) {
@@ -140,6 +142,28 @@ export const Search = () => {
                         }}
                       ></Bg>
                       <Title>{term.title}</Title>
+                    </Link>
+                  </Con>
+                ))}
+              </ConWrap>
+            )}
+          </>
+        )}
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            {tvResult && (
+              <ConWrap>
+                {tvResult.map((term) => (
+                  <Con key={term.id}>
+                    <Link to={`/detail/${term.id}`}>
+                      <Bg
+                        style={{
+                          background: `url(${imgUrl}${term.backdrop_path}) no-repeat center / cover`,
+                        }}
+                      ></Bg>
+                      <Title>{term.name}</Title>
                     </Link>
                   </Con>
                 ))}
