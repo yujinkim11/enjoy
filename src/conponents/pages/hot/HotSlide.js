@@ -13,21 +13,40 @@ const SlideWrap = styled.div`
 
 const HotImgWrap = styled.div`
   position: relative;
-
-  :hover {
-    h3 {
-      transition: 1s;
-      opacity: 1;
-    }
-  }
-  h3 {
-    font-size: 40px;
-    font-weight: 500;
-    position: absolute;
-    top: 200px;
-    left: 10px;
+  .hotcontents {
     opacity: 0;
-    color: rgba(255, 255, 255, 0.7);
+    transition: 1s;
+  }
+  :hover .hotcontents {
+    opacity: 1;
+  }
+`;
+
+const MvTitle = styled.h3`
+  font-size: 30px;
+  font-weight: 700;
+  span {
+    color: ${mainStyle.mainColor};
+  }
+`;
+
+const HotCon = styled.div`
+  position: absolute;
+  top: 37%;
+  left: 10px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  span {
+    font-size: 20px;
   }
 `;
 
@@ -39,6 +58,16 @@ const HotImg = styled.div`
     transform: scale(1.05, 1.05);
     transition: 0.5s;
     opacity: 0.5;
+  }
+`;
+
+const Genre = styled.div`
+  display: flex;
+  font-size: 20px;
+  .genres {
+    width: 15%;
+    height: 100%;
+    background-color: ${mainStyle.mainColor};
   }
 `;
 
@@ -60,10 +89,19 @@ export const HotSlide = ({ hotData }) => {
                     }) no-repeat center / cover`,
                   }}
                 />
-                <h3>
-                  {hot.name}
-                  {hot.title}
-                </h3>
+                <HotCon className="hotcontents">
+                  <h1>
+                    {hot.title}
+                    {hot.name}
+                  </h1>
+                  <Genre>
+                    {hot.genre_ids.map((genreid) => (
+                      <div className="genres">{genreid}</div>
+                    ))}
+                  </Genre>
+                  <p>{hot.vote_average}점</p>
+                  <span>{hot.adult ? "19+" : "Everybody"}</span>
+                </HotCon>
               </HotImgWrap>
             </SwiperSlide>
           ))}

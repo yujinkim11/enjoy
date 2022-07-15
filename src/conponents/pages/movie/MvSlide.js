@@ -12,21 +12,12 @@ const SlideWrap = styled.div`
 
 const MovieImgWrap = styled.div`
   position: relative;
-
-  :hover {
-    h3 {
-      transition: 1s;
-      opacity: 1;
-    }
-  }
-  h3 {
-    font-size: 40px;
-    font-weight: 500;
-    position: absolute;
-    top: 200px;
-    left: 10px;
+  .mvcontents {
     opacity: 0;
-    color: rgba(255, 255, 255, 0.7);
+    transition: 1s;
+  }
+  :hover .mvcontents {
+    opacity: 1;
   }
 `;
 
@@ -38,6 +29,26 @@ const MvTitle = styled.h3`
   }
 `;
 
+const MvCon = styled.div`
+  position: absolute;
+  top: 37%;
+  left: 10px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  span {
+    font-size: 20px;
+  }
+`;
+
 const MvImg = styled.div`
   height: 450px;
   margin-top: 50px;
@@ -45,6 +56,16 @@ const MvImg = styled.div`
     transform: scale(1.05, 1.05);
     transition: 0.5s;
     opacity: 0.5;
+  }
+`;
+
+const Genre = styled.div`
+  display: flex;
+  font-size: 20px;
+  .genres {
+    width: 15%;
+    height: 100%;
+    background-color: ${mainStyle.mainColor};
   }
 `;
 
@@ -69,7 +90,16 @@ export const MvSlide = ({ mvdata, red, moviecate }) => {
                   }) no-repeat center / cover`,
                 }}
               />
-              <h3>{moviedata.title}</h3>
+              <MvCon className="mvcontents">
+                <h1>{moviedata.title}</h1>
+                <Genre>
+                  {moviedata.genre_ids.map((genreid) => (
+                    <div className="genres">{genreid}</div>
+                  ))}
+                </Genre>
+                <p>{moviedata.vote_average}점</p>
+                <span>{moviedata.adult ? "19+" : "Everybody"}</span>
+              </MvCon>
             </MovieImgWrap>
           </SwiperSlide>
         ))}

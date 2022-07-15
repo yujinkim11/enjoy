@@ -12,21 +12,12 @@ const SlideWrap = styled.div`
 
 const TvImgWrap = styled.div`
   position: relative;
-
-  :hover {
-    h3 {
-      transition: 1s;
-      opacity: 1;
-    }
-  }
-  h3 {
-    font-size: 40px;
-    font-weight: 500;
-    position: absolute;
-    top: 200px;
-    left: 10px;
+  .tvcontents {
     opacity: 0;
-    color: rgba(255, 255, 255, 0.7);
+    transition: 1s;
+  }
+  :hover .tvcontents {
+    opacity: 1;
   }
 `;
 
@@ -38,6 +29,26 @@ const TvTitle = styled.h3`
   }
 `;
 
+const TvCon = styled.div`
+  position: absolute;
+  top: 37%;
+  left: 10px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  span {
+    font-size: 20px;
+  }
+`;
+
 const TvImg = styled.div`
   height: 450px;
   margin-top: 50px;
@@ -45,6 +56,16 @@ const TvImg = styled.div`
     transform: scale(1.05, 1.05);
     transition: 0.5s;
     opacity: 0.5;
+  }
+`;
+
+const Genre = styled.div`
+  display: flex;
+  font-size: 20px;
+  .genres {
+    width: 15%;
+    height: 100%;
+    background-color: ${mainStyle.mainColor};
   }
 `;
 
@@ -69,7 +90,16 @@ export const TvSlide = ({ data, red, title }) => {
                   }) no-repeat center / cover`,
                 }}
               />
-              <h3>{tvdata.name}</h3>
+              <TvCon className="tvcontents">
+                <h1>{tvdata.name}</h1>
+                <Genre>
+                  {tvdata.genre_ids.map((genreid) => (
+                    <div className="genres">{genreid}</div>
+                  ))}
+                </Genre>
+                <p>{tvdata.vote_average}점</p>
+                <span>{tvdata.adult ? "19+" : "Everybody"}</span>
+              </TvCon>
             </TvImgWrap>
           </SwiperSlide>
         ))}

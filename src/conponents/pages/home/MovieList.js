@@ -76,7 +76,7 @@ export const MovieList = ({ movie, red, title }) => {
       <Swiper spaceBetween={30} slidesPerView={4}>
         {movie.map((play) => (
           <SwiperSlide key={play.id}>
-            <Link to={`/mvdetail/${play.id}`}>
+            <Link to={`/detail/${play.id}`}>
               <MvImgWrap>
                 <MvImg
                   style={{

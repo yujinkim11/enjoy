@@ -76,7 +76,7 @@ export const TvList = ({ tv, red, title }) => {
       <Swiper spaceBetween={30} slidesPerView={4}>
         {tv.map((play) => (
           <SwiperSlide key={play.id}>
-            <Link to={`/tvdetail/${play.id}`}>
+            <Link to={`/detail/${play.id}`}>
               <TvImgWrap>
                 <TvImg
                   style={{

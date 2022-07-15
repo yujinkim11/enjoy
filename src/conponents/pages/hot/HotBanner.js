@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { imgUrl } from "../../../constants/constants";
 
@@ -24,7 +25,7 @@ const HotPoster = styled.div`
 
 const HotTitle = styled.h3`
   font-size: 60px;
-  font-weight: 500;
+  font-weight: 700;
   color: #ff3268;
   padding-bottom: 30px;
 `;
@@ -36,7 +37,7 @@ const HotContent = styled.p`
   width: 850px;
   font-size: 25px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 40px;
 `;
 const HotCategoryWrap = styled.div`
@@ -48,9 +49,12 @@ const HotCategoryWrap = styled.div`
 `;
 
 const HotCategory = styled.div`
+  width: 400px;
   font-size: 30px;
   font-weight: 700;
   word-spacing: 100px;
+  display: flex;
+  justify-content: space-between;
 `;
 const CategoryBar = styled.div`
   width: 440px;
@@ -64,14 +68,18 @@ const ChoiceBar = styled.div`
   width: 20%;
   height: 5px;
   position: absolute;
-  right: ${(props) => props.right};
+  right: ${(props) => props.posi};
   background-color: ${mainStyle.mainColor};
 `;
 
 export const HotBabnner = ({ bndata }) => {
-  const handleClick = () => {};
-  // console.log("hotbanner", bndata);
-  console.log(bndata);
+  const [posi, setPosi] = useState();
+
+  const handleClick = () => {
+    setPosi("0");
+    // console.log(handleClick);
+  };
+
   return (
     <>
       <BannerWrap>
@@ -100,11 +108,11 @@ export const HotBabnner = ({ bndata }) => {
       </BannerWrap>
       <HotCategoryWrap>
         <HotCategory>
-          <span onClick={handleClick}>예능</span> <span>드라마</span>
+          <span>전체</span> <span onClick={handleClick}>드라마</span>
           <span>영화</span>
         </HotCategory>
         <CategoryBar>
-          <ChoiceBar posi={"right"} />
+          <ChoiceBar posi={"40%"} />
         </CategoryBar>
       </HotCategoryWrap>
     </>
