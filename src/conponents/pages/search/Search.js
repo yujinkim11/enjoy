@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import { mvApi, tvApi } from "../../../api";
+import { mvApi } from "../../../api";
 import { Container } from "../../Container";
 import { Loading } from "../../Loading";
 import { PageTitle } from "../../PageTitle";
@@ -42,8 +42,8 @@ const Bg = styled.div`
 `;
 
 export const Search = () => {
-  const [mvsearch, setMvSearch] = useState();
-  const [tvsearch, setTvSearch] = useState();
+  const [searchResult, setSearchResult] = useState();
+
   const [loading, setLoadig] = useState();
 
   const {
@@ -64,27 +64,43 @@ export const Search = () => {
     setLoadig(true);
     try {
       const {
-        data: { mvresult },
+        data: { results: mv },
       } = await mvApi.mvsearch(term);
-      setMvSearch(mvresult);
-      const {
-        data: { tvresult },
-      } = await tvApi.tvsearch(term);
-      setTvSearch(tvresult);
+      setSearchResult(mv);
 
-      if (mvresult.length <= 0) {
+      if (mv.length <= 0) {
         setError("result", {
           message: "영화가 없어요 !",
         });
+        // => setError("에러 이름", {message:"값"})
+        // => useForm에 있는 속성으로 에러를 설정할 수 있음
       } else {
-        setMvSearch(mvresult);
+        setSearchResult(mv);
       }
+
+      // const {
+      //   data: { results: tv },
+      // } = await tvApi.tvsearch(term);
+      // setSearchResult(tv);
+
+      // if (tv.length <= 0) {
+      //   setError("result", {
+      //     message: "영화가 없어요 !",
+      //   });
+      //   // => setError("에러 이름", {message:"값"})
+      //   // => useForm에 있는 속성으로 에러를 설정할 수 있음
+      // } else {
+      //   setSearchResult(tv);}
 
       setLoadig(false);
     } catch (error) {
       console.log(error);
     }
   };
+
+  console.log(searchResult);
+  console.log(errors);
+  // => 폼 상태에 에러처리 담당
 
   return (
     <div>
@@ -113,9 +129,9 @@ export const Search = () => {
           <Loading />
         ) : (
           <>
-            {mvsearch && (
+            {searchResult && (
               <ConWrap>
-                {mvsearch.map((term) => (
+                {searchResult.map((term) => (
                   <Con key={term.id}>
                     <Link to={`/detail/${term.id}`}>
                       <Bg

@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { mainStyle } from "../styles/globalstyle";
 
 const HeaderWrap = styled.div`
+  width: 100%;
   height: 80px;
   padding: ${mainStyle.padding};
   display: flex;
@@ -51,16 +52,7 @@ const Menu = styled.div`
   }
 `;
 
-const Search = styled.div`
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  input {
-    margin-right: 20px;
-    border: 0;
-    height: 25px;
-  }
-`;
+const Search = styled.div``;
 
 export const Header = () => {
   const [bg, setBg] = useState();
@@ -94,7 +86,6 @@ export const Header = () => {
           <Link to={"/hot"}>HOT</Link>
         </Menu>
         <Search>
-          <input type="text"></input>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </Search>
       </MenuWrap>
