@@ -19,25 +19,33 @@ const TvProgramTitle = styled.h3`
   margin-bottom: 100px;
 `;
 
-const TvProgramCategory = styled.div``;
+const TvProgramCategory = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const CategoryWrap = styled.div`
-  width: 440px;
-  display: flex;
-  justify-content: space-between;
+  width: 400px;
   font-size: 30px;
   font-weight: 700;
+  word-spacing: 100px;
+  display: flex;
+  justify-content: space-between;
 `;
 const CategoryBar = styled.div`
   width: 440px;
   height: 5px;
   background-color: #707070;
   margin-top: 30px;
+  position: relative;
 `;
 
 const ChoiceBar = styled.div`
   width: 20%;
   height: 5px;
+  position: absolute;
+  right: ${(props) => props.posi};
   background-color: ${mainStyle.mainColor};
 `;
 
@@ -45,7 +53,7 @@ export const TvProgram = () => {
   const [tvpopular, setTvPopular] = useState();
   const [latest, setlatest] = useState();
   const [loading, setLoading] = useState(true);
-
+  const [posi, setPosi] = useState();
   useEffect(() => {
     const TvData = async () => {
       try {
@@ -77,12 +85,30 @@ export const TvProgram = () => {
               </TvProgramTitle>
               <TvProgramCategory>
                 <CategoryWrap>
-                  <span>전체</span>
-                  <span>드라마</span>
-                  <span>영화</span>
+                  <span
+                    onClick={() => {
+                      setPosi("80%");
+                    }}
+                  >
+                    전체
+                  </span>
+                  <span
+                    onClick={() => {
+                      setPosi("40%");
+                    }}
+                  >
+                    드라마
+                  </span>
+                  <span
+                    onClick={() => {
+                      setPosi("0");
+                    }}
+                  >
+                    영화
+                  </span>
                 </CategoryWrap>
                 <CategoryBar>
-                  <ChoiceBar />
+                  <ChoiceBar posi={posi} />
                 </CategoryBar>
               </TvProgramCategory>
               <TvSlide data={tvpopular} red="TOP" title=" 인기 프로그램" />

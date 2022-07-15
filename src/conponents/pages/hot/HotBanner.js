@@ -75,10 +75,10 @@ const ChoiceBar = styled.div`
 export const HotBabnner = ({ bndata }) => {
   const [posi, setPosi] = useState();
 
-  const handleClick = () => {
-    setPosi("0");
-    // console.log(handleClick);
-  };
+  // const handleClick = () => {
+  //   setPosi("0");
+  //   // console.log(handleClick);
+  // };
 
   return (
     <>
@@ -108,11 +108,30 @@ export const HotBabnner = ({ bndata }) => {
       </BannerWrap>
       <HotCategoryWrap>
         <HotCategory>
-          <span>전체</span> <span onClick={handleClick}>드라마</span>
-          <span>영화</span>
+          <span
+            onClick={() => {
+              setPosi("80%");
+            }}
+          >
+            전체
+          </span>{" "}
+          <span
+            onClick={() => {
+              setPosi("40%");
+            }}
+          >
+            드라마
+          </span>
+          <span
+            onClick={() => {
+              setPosi("0%");
+            }}
+          >
+            영화
+          </span>
         </HotCategory>
         <CategoryBar>
-          <ChoiceBar posi={"40%"} />
+          <ChoiceBar posi={posi} />
         </CategoryBar>
       </HotCategoryWrap>
     </>
