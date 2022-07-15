@@ -86,7 +86,9 @@ export const Header = () => {
           <Link to={"/hot"}>HOT</Link>
         </Menu>
         <Search>
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <Link to={"/search"}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </Link>
         </Search>
       </MenuWrap>
     </HeaderWrap>
