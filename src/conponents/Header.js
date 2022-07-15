@@ -67,10 +67,10 @@ export const Header = () => {
 
   const handelScroll = () => {
     const sct = window.pageYOffset;
-    // console.log(sct);
+    console.log(sct);
     // => 내가 내린 스크롤값 얻어오기, var로 지정하여 사용하기
 
-    if (sct > 800) {
+    if (sct > 400) {
       setBg("#1a1a1a");
     } else {
       setBg("transparent");
