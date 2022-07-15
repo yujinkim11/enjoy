@@ -9,7 +9,7 @@ import { NotFound } from "./conponents/pages/NotFound";
 import { Header } from "./conponents/Header";
 import { Footer } from "./conponents/Footer";
 import { Search } from "./conponents/pages/search/Search";
-import { Detail } from "./conponents/pages/detail/Detail";
+import { Details } from "./conponents/pages/detail/Details";
 import { Banner } from "./conponents/pages/home/Banner";
 import { BannerPlay } from "./conponents/pages/home/BannerPlay";
 
@@ -26,9 +26,9 @@ function App() {
           <Route path="/hot" element={<Hot />} />
           <Route path="/search" element={<Search />} />
           <Route path="/*" element={<NotFound />} />
-          <Route path="/tvdetail:id" element={<Detail />} />
-          <Route path="/mvdetail:id" element={<Detail />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/tvdetail:id" element={<Details />} />
+          <Route path="/mvdetail:id" element={<Details />} />
+          <Route path="/detail" element={<Details />} />
           <Route path="/banner" element={<Banner />} />
           <Route path="/bannerplay" element={<BannerPlay />} />
         </Routes>

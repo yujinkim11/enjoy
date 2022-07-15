@@ -41,8 +41,6 @@ const ChoiceBar = styled.div`
   background-color: ${mainStyle.mainColor};
 `;
 
-const Genre = styled.p``;
-
 export const TvProgram = () => {
   const [tvpopular, setTvPopular] = useState();
   const [latest, setlatest] = useState();
@@ -62,7 +60,7 @@ export const TvProgram = () => {
         setLoading(false);
       } catch (error) {}
     };
-    console.log(tvpopular);
+
     TvData();
   }, []);
 

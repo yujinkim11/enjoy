@@ -64,28 +64,27 @@ const ChoiceBar = styled.div`
   width: 20%;
   height: 5px;
   position: absolute;
-  right: ${(props) => props.posi};
+  right: ${(props) => props.right};
   background-color: ${mainStyle.mainColor};
 `;
 
 export const HotBabnner = ({ bndata }) => {
   const handleClick = () => {};
   // console.log("hotbanner", bndata);
+  console.log(bndata);
   return (
     <>
       <BannerWrap>
         <PosterWrap>
-          {bndata.map((banner) => (
-            <HotPoster
-              style={{
-                background: `url(${
-                  banner.backdrop_path
-                    ? `${imgUrl}${banner.backdrop_path}`
-                    : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
-                }) no-repeat center / cover`,
-              }}
-            />
-          ))}
+          <HotPoster
+            style={{
+              background: `url(${
+                bndata.backdrop_path
+                  ? `${imgUrl}${bndata.backdrop_path}`
+                  : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+              }) no-repeat center / cover`,
+            }}
+          />
         </PosterWrap>
 
         <HotConWrap>
@@ -101,13 +100,11 @@ export const HotBabnner = ({ bndata }) => {
       </BannerWrap>
       <HotCategoryWrap>
         <HotCategory>
-          <span posi={"40%"} onClick={handleClick}>
-            예능
-          </span>{" "}
-          <span>드라마</span> <span>영화</span>
+          <span onClick={handleClick}>예능</span> <span>드라마</span>
+          <span>영화</span>
         </HotCategory>
         <CategoryBar>
-          <ChoiceBar />
+          <ChoiceBar posi={"right"} />
         </CategoryBar>
       </HotCategoryWrap>
     </>

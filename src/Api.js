@@ -16,7 +16,7 @@ export const mvApi = {
   moviepopular: () => api.get("/movie/popular"),
   nowPlaying: () => api.get("/movie/now_playing"),
   movieDetail: (id) => api.get(`/movie/${id}`),
-  search: (term) =>
+  mvsearch: (term) =>
     api.get(`/search/movie`, {
       params: {
         query: term,
@@ -32,4 +32,10 @@ export const tvApi = {
   tvDetail: (id) => api.get(`/tv/${id}`),
   tvEpisode: (id, season_number, episode_number) =>
     api.get(`/tv/${id}/season/${season_number}/episode/${episode_number}`),
+  tvsearch: (term) =>
+    api.get(`/search/tv`, {
+      params: {
+        query: term,
+      },
+    }),
 };

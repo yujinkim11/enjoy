@@ -19,21 +19,32 @@ const Title = styled.div`
 
 const MvImgWrap = styled.div`
   position: relative;
-
-  :hover {
-    h3 {
-      transition: 1s;
-      opacity: 1;
-    }
-  }
-  h3 {
-    font-size: 40px;
-    font-weight: 500;
-    position: absolute;
-    top: 200px;
-    left: 10px;
+  .mvcontents {
     opacity: 0;
-    color: rgba(255, 255, 255, 0.7);
+    transition: 1s;
+  }
+  :hover .mvcontents {
+    opacity: 1;
+  }
+`;
+
+const MvCon = styled.div`
+  position: absolute;
+  top: 37%;
+  left: 10px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  span {
+    font-size: 20px;
   }
 `;
 
@@ -43,6 +54,16 @@ const MvImg = styled.div`
   :hover {
     opacity: 0.5;
     transition: 0.5s;
+  }
+`;
+
+const Genre = styled.div`
+  display: flex;
+  font-size: 20px;
+  .genres {
+    width: 15%;
+    height: 100%;
+    background-color: ${mainStyle.mainColor};
   }
 `;
 
@@ -62,7 +83,16 @@ export const MovieList = ({ movie, red, title }) => {
                     background: `url(${imgUrl}${play.backdrop_path}) no-repeat center/cover`,
                   }}
                 />
-                <h3>{play.title}</h3>
+                <MvCon className="mvcontents">
+                  <h1>{play.title}</h1>
+                  <Genre>
+                    {play.genre_ids.map((genreid) => (
+                      <div className="genres">{genreid}</div>
+                    ))}
+                  </Genre>
+                  <p>{play.vote_average}점</p>
+                  <span>{play.adult ? "19+" : "Everybody"}</span>
+                </MvCon>
               </MvImgWrap>
             </Link>
           </SwiperSlide>
