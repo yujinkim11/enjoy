@@ -78,6 +78,15 @@ const RoundTitle = styled.h3`
     margin-right: 20px;
   }
 `;
+
+const Heart = styled.p`
+  color: ${(props) => props.color};
+`;
+
+const Bookmark = styled.p`
+  color: ${(props) => props.bookcolor};
+`;
+
 const RoundContent = styled.p`
   width: 600px;
   line-height: 40px;
@@ -91,10 +100,29 @@ const RoundInfo = styled.p`
   font-size: 30px;
   font-weight: 500;
 `;
+
 export const Banner = () => {
   const [popular, setPopular] = useState();
+  const [color, setColor] = useState();
+  const [bookcolor, setBookColor] = useState();
   const [loading, setLoading] = useState(true);
-  console.log(popular);
+
+  const handleHeart = () => {
+    if (color !== "red") {
+      setColor("red");
+    } else {
+      setColor("white");
+    }
+  };
+
+  const handleBook = () => {
+    if (bookcolor !== "yellow") {
+      setBookColor("yellow");
+    } else {
+      setBookColor("white");
+    }
+  };
+
   useEffect(() => {
     const bannerData = async () => {
       try {
@@ -116,50 +144,57 @@ export const Banner = () => {
         <Loading />
       ) : (
         <>
-          <SubMainWrap>
-            <BgPoster
-              style={{
-                background: `url(${imgUrl}${popular[0].backdrop_path}) no-repeat center / cover`,
-              }}
-            />
-            <ConWrap>
-              <Title>{popular[0].name}</Title>
-              <Info>
-                <p>15+ |장르| {popular[0].first_air_date}</p>
-              </Info>
-              <Content>
-                <p>{popular[0].overview.slice(0, 80) + "..."}</p>
-              </Content>
-              <Link to={"/BannerPlay"}>
-                <PlayBox>바로 재생</PlayBox>
-              </Link>
-            </ConWrap>
-            <Poster
-              style={{
-                background: `url(${imgUrl}${popular[0].backdrop_path}) no-repeat center / cover`,
-              }}
-            />
-          </SubMainWrap>
-          <RoundWrap>
-            <RoundTitle>
-              <h3>{popular[0].name}</h3>
-              <p>
-                <FontAwesomeIcon icon={faHeart} />
-              </p>
-              <span>
-                <FontAwesomeIcon icon={faBookmark} />
-              </span>
-            </RoundTitle>
-            <RoundContent>
-              <p>{popular[0].overview + "..."}</p>
-            </RoundContent>
-            <RoundInfo>회차 정보</RoundInfo>
-          </RoundWrap>
+          {popular && (
+            <>
+              <SubMainWrap>
+                <BgPoster
+                  style={{
+                    background: `url(${imgUrl}${popular[0].backdrop_path}) no-repeat center / cover`,
+                  }}
+                />
+                <ConWrap>
+                  <Title>{popular[0].name}</Title>
+                  <Info>
+                    <p>
+                      {popular.adult ? "19+" : "Everybody"} |<span></span>|{" "}
+                      {popular[0].first_air_date}
+                    </p>
+                  </Info>
+                  <Content>
+                    <p>{popular[0].overview.slice(0, 80) + "..."}</p>
+                  </Content>
+                  <Link to={"/BannerPlay"}>
+                    <PlayBox>바로 재생</PlayBox>
+                  </Link>
+                </ConWrap>
+                <Poster
+                  style={{
+                    background: `url(${imgUrl}${popular[0].backdrop_path}) no-repeat center / cover`,
+                  }}
+                />
+              </SubMainWrap>
+              <RoundWrap>
+                <RoundTitle>
+                  <h3>{popular[0].name}</h3>
+                  <Heart color={color} onClick={handleHeart}>
+                    <FontAwesomeIcon icon={faHeart} />
+                  </Heart>
+                  <Bookmark bookcolor={bookcolor} onClick={handleBook}>
+                    <FontAwesomeIcon icon={faBookmark} />
+                  </Bookmark>
+                </RoundTitle>
+                <RoundContent>
+                  <p>{popular[0].overview + "..."}</p>
+                </RoundContent>
+                <RoundInfo>회차 정보</RoundInfo>
+              </RoundWrap>
 
-          <RoundBox />
-          <RoundBox />
-          <RoundBox />
-          <RoundBox />
+              <RoundBox />
+              <RoundBox />
+              <RoundBox />
+              <RoundBox />
+            </>
+          )}
         </>
       )}
     </>

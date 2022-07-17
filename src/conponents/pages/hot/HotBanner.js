@@ -12,15 +12,32 @@ const BannerWrap = styled.div`
   display: flex;
   align-items: flex-end;
   padding: ${mainStyle.padding};
+  @media screen and (max-width: 500px) {
+    padding: ${mainStyle.moPadding};
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+  }
 `;
 
-const PosterWrap = styled.div``;
+const PosterWrap = styled.div`
+  width: 100%;
+  @media screen and (max-width: 500px) {
+    padding: -20px;
+  }
+`;
 
 const HotPoster = styled.div`
   width: 500px;
   height: 500px;
   background-color: antiquewhite;
   margin-right: 50px;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    height: 120px;
+  }
 `;
 
 const HotTitle = styled.h3`
@@ -28,9 +45,17 @@ const HotTitle = styled.h3`
   font-weight: 700;
   color: #ff3268;
   padding-bottom: 30px;
+  @media screen and (max-width: 500px) {
+    width: 90vw;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 50px;
+  }
 `;
 const HotConWrap = styled.div`
   padding-bottom: 60px;
+  @media screen and (max-width: 500px) {
+  }
 `;
 
 const HotContent = styled.p`
@@ -39,6 +64,11 @@ const HotContent = styled.p`
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
   line-height: 40px;
+  @media screen and (max-width: 500px) {
+    width: 80vw;
+    font-size: 20px;
+    line-height: 22px;
+  }
 `;
 const HotCategoryWrap = styled.div`
   height: 130px;
@@ -46,6 +76,8 @@ const HotCategoryWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 500px) {
+  }
 `;
 
 const HotCategory = styled.div`
@@ -55,6 +87,10 @@ const HotCategory = styled.div`
   word-spacing: 100px;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 500px) {
+    width: 250px;
+    font-size: 20px;
+  }
 `;
 const CategoryBar = styled.div`
   width: 440px;
@@ -62,6 +98,10 @@ const CategoryBar = styled.div`
   background-color: #707070;
   margin-top: 30px;
   position: relative;
+  @media screen and (max-width: 500px) {
+    width: 270px;
+    margin-bottom: -20px;
+  }
 `;
 
 const ChoiceBar = styled.div`

@@ -7,6 +7,7 @@ import { mainStyle } from "../styles/globalstyle";
 
 const HeaderWrap = styled.div`
   width: 100%;
+  max-width: 100%;
   height: 80px;
   padding: ${mainStyle.padding};
   display: flex;
@@ -25,11 +26,12 @@ const HeaderWrap = styled.div`
 const Logo = styled.div`
   font-size: 30px;
   font-weight: 900;
+  @media screen and (max-width: 500px) {
+    font-size: 24px;
+  }
 `;
 
 const MenuWrap = styled.div`
-  width: 100%;
-  margin-left: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,24 +39,28 @@ const MenuWrap = styled.div`
     color: white;
   }
   @media screen and (max-width: 500px) {
-    margin-left: 70px;
+    margin-left: -30px;
   }
 `;
 
 const Menu = styled.div`
+  margin-left: 100px;
   font-size: 18px;
-  font-weight: 300;
-  margin-left: -900px;
-  :nth-child(1) {
-    margin-left: 0px;
-  }
+  font-weight: 500;
 
   @media screen and (max-width: 500px) {
-    margin-right: 30px;
+    margin-left: 50px;
+    font-size: 16px;
   }
 `;
 
-const Search = styled.div``;
+const Search = styled.div`
+  position: absolute;
+  right: 150px;
+  @media screen and (max-width: 500px) {
+    right: 20px;
+  }
+`;
 
 export const Header = () => {
   const [bg, setBg] = useState();

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { imgUrl } from "../../../constants/constants";
 import { Navigation } from "swiper";
 import { mainStyle } from "../../../styles/globalstyle";
+import { Link } from "react-router-dom";
 
 const SlideWrap = styled.div`
   margin-top: 100px;
@@ -70,45 +71,65 @@ const Genre = styled.ul`
   }
   margin: 0 0 20px 0px;
 `;
+const params = {
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+};
 
 export const MvSlide = ({ mvdata, red, moviecate }) => {
   // console.log(mvdata[1].backdrop_path);
   return (
-    <SlideWrap>
-      <MvTitle>
-        <span>{red}</span>
-        {moviecate}
-      </MvTitle>
-      <Swiper modules={[Navigation]} spaceBetween={20} slidesPerView={4}>
-        {mvdata.map((moviedata) => (
-          <SwiperSlide>
-            <MovieImgWrap>
-              <MvImg
-                style={{
-                  background: `url(${
-                    moviedata.backdrop_path
-                      ? `${imgUrl}${moviedata.backdrop_path}`
-                      : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
-                  }) no-repeat center / cover`,
-                }}
-              />
-              <MvCon className="mvcontents">
-                <h1>{moviedata.title}</h1>
-                <Genre>
-                  {moviedata.genre_ids.map((genreid) => (
-                    <li key={genreid.id} className="genres">
-                      {genreid.name}
-                      {console.log(genreid)}
-                    </li>
-                  ))}
-                </Genre>
-                <p>{moviedata.vote_average}점</p>
-                <span>{moviedata.adult ? "19+" : "Everybody"}</span>
-              </MvCon>
-            </MovieImgWrap>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </SlideWrap>
+    <>
+      {mvdata && (
+        <SlideWrap>
+          <MvTitle>
+            <span>{red}</span>
+            {moviecate}
+          </MvTitle>
+          <Swiper modules={[Navigation]} navigation {...params}>
+            {mvdata.map((moviedata) => (
+              <SwiperSlide>
+                <MovieImgWrap>
+                  <Link to={`/tv_detail/${moviedata.id}`}>
+                    <MvImg
+                      style={{
+                        background: `url(${
+                          moviedata.backdrop_path
+                            ? `${imgUrl}${moviedata.backdrop_path}`
+                            : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                        }) no-repeat center / cover`,
+                      }}
+                    />
+
+                    <MvCon className="mvcontents">
+                      <h1>{moviedata.title}</h1>
+                      <Genre>
+                        {moviedata.genre_ids.map((genreid) => (
+                          <li key={genreid.id} className="genres">
+                            {genreid.name}
+                            {console.log(genreid)}
+                          </li>
+                        ))}
+                      </Genre>
+                      <p>{moviedata.vote_average}점</p>
+
+                      <span>{moviedata.adult ? "19+" : "Everybody"}</span>
+                    </MvCon>
+                  </Link>
+                </MovieImgWrap>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </SlideWrap>
+      )}
+    </>
   );
 };

@@ -19,18 +19,21 @@ const MainbannerWrap = styled.div`
   }
 `;
 
+const ConWrap = styled.div`
+  padding: 150px 150px;
+  @media screen and (max-width: 500px) {
+    font-size: 20px;
+    padding: 150px 20px;
+  }
+`;
+
 const Title = styled.h3`
   font-size: 90px;
   font-weight: 700;
   margin-bottom: 40px;
   @media screen and (max-width: 500px) {
-    font-size: 30px;
-    padding: ${mainStyle.moPadding};
+    font-size: 40px;
   }
-`;
-
-const ConWrap = styled.div`
-  padding: 150px 150px;
 `;
 
 const BoxWrap = styled.div`
@@ -48,6 +51,11 @@ const Box1 = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+  @media screen and (max-width: 500px) {
+    width: 50px;
+    height: 30px;
+    font-size: 16px;
+  }
 `;
 
 const Box2 = styled.div`
@@ -61,6 +69,11 @@ const Box2 = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+  @media screen and (max-width: 500px) {
+    width: 50px;
+    height: 30px;
+    font-size: 16px;
+  }
 `;
 
 const Box3 = styled.div`
@@ -73,6 +86,11 @@ const Box3 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 500px) {
+    width: 50px;
+    height: 30px;
+    font-size: 16px;
+  }
 `;
 
 const Con = styled.p`
@@ -81,6 +99,10 @@ const Con = styled.p`
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);
   margin: 70px 0;
+  @media screen and (max-width: 500px) {
+    width: 250px;
+    font-size: 20px;
+  }
 `;
 
 const PlayBox = styled.div`
@@ -99,6 +121,11 @@ const PlayBox = styled.div`
   }
   p {
     margin-left: 10px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 250px;
+    height: 60px;
+    font-size: 20px;
   }
 `;
 

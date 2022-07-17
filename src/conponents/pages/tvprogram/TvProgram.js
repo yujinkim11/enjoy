@@ -12,11 +12,18 @@ const TvProgramWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 500px) {
+    padding: ${mainStyle.moPadding};
+  }
 `;
 const TvProgramTitle = styled.h3`
   font-size: 60px;
   font-weight: 900;
   margin-bottom: 100px;
+  @media screen and (max-width: 500px) {
+    font-size: 40px;
+    margin-bottom: 70px;
+  }
 `;
 
 const TvProgramCategory = styled.div`
@@ -32,6 +39,10 @@ const CategoryWrap = styled.div`
   word-spacing: 100px;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 500px) {
+    width: 250px;
+    font-size: 20px;
+  }
 `;
 const CategoryBar = styled.div`
   width: 440px;
@@ -39,6 +50,10 @@ const CategoryBar = styled.div`
   background-color: #707070;
   margin-top: 30px;
   position: relative;
+  @media screen and (max-width: 500px) {
+    width: 270px;
+    margin-bottom: -20px;
+  }
 `;
 
 const ChoiceBar = styled.div`

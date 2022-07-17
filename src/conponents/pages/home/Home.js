@@ -10,10 +10,9 @@ export const Home = () => {
   const [mvupcome, setMvUpcome] = useState();
   const [now, setNow] = useState();
   const [tvpopular, setTvPopular] = useState();
-  // const [mvpopular, setMvPopular] = useState();
   const [mvtop, setMvTop] = useState();
   const [tvtop, setTvTop] = useState();
-  const [latest, setlatest] = useState();
+  const [latest, setLatest] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -31,10 +30,6 @@ export const Home = () => {
         setNow(nowData);
         // 영화 now
 
-        // const {
-        //   data: { results: mvpopularData },
-        // } = await mvApi.moviepopular();
-        // setMvPopular(mvpopularData);
         const {
           data: { results: tvpopularData },
         } = await tvApi.popular();
@@ -54,7 +49,7 @@ export const Home = () => {
         const {
           data: { results: tvlatestData },
         } = await tvApi.latest();
-        setlatest(tvlatestData);
+        setLatest(tvlatestData);
         // 최신 tv프로그램
 
         setLoading(false);

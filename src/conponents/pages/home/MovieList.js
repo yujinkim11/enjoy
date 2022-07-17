@@ -5,9 +5,14 @@ import { Link } from "react-router-dom";
 import "swiper/css/navigation";
 import "swiper/css";
 import { mainStyle } from "../../../styles/globalstyle";
+import { Navigation } from "swiper";
+import "swiper/css/navigation";
 
 const MvWrap = styled.div`
   margin-top: 100px;
+  @media screen and (max-width: 500px) {
+    margin-top: 50px;
+  }
 `;
 const Title = styled.div`
   font-size: 40px;
@@ -37,14 +42,23 @@ const MvCon = styled.div`
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 10px;
+    @media screen and (max-width: 500px) {
+      font-size: 30px;
+    }
   }
 
   p {
     font-size: 20px;
     margin: 10px 0;
+    @media screen and (max-width: 500px) {
+      font-size: 16px;
+    }
   }
   span {
     font-size: 20px;
+    @media screen and (max-width: 500px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -66,6 +80,18 @@ const Genre = styled.div`
     background-color: ${mainStyle.mainColor};
   }
 `;
+const params = {
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+};
 
 export const MovieList = ({ movie, red, title }) => {
   return (
@@ -73,10 +99,10 @@ export const MovieList = ({ movie, red, title }) => {
       <Title>
         <span>{red}</span> {title}
       </Title>
-      <Swiper spaceBetween={30} slidesPerView={4}>
+      <Swiper modules={[Navigation]} navigation {...params}>
         {movie.map((play) => (
           <SwiperSlide key={play.id}>
-            <Link to={`/detail/${play.id}`}>
+            <Link to={`/mv_detail/${play.id}`}>
               <MvImgWrap>
                 <MvImg
                   style={{
@@ -85,11 +111,7 @@ export const MovieList = ({ movie, red, title }) => {
                 />
                 <MvCon className="mvcontents">
                   <h1>{play.title}</h1>
-                  <Genre>
-                    {play.genre_ids.map((genreid) => (
-                      <div className="genres">{genreid}</div>
-                    ))}
-                  </Genre>
+                  <Genre>장르</Genre>
                   <p>{play.vote_average}점</p>
                   <span>{play.adult ? "19+" : "Everybody"}</span>
                 </MvCon>

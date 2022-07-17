@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { imgUrl } from "../../../constants/constants";
 import { Navigation } from "swiper";
 import { mainStyle } from "../../../styles/globalstyle";
+import { Link } from "react-router-dom";
 
 const SlideWrap = styled.div`
   margin-top: 100px;
@@ -38,14 +39,23 @@ const TvCon = styled.div`
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 10px;
+    @media screen and (max-width: 500px) {
+      font-size: 30px;
+    }
   }
 
   p {
     font-size: 20px;
     margin: 10px 0;
+    @media screen and (max-width: 500px) {
+      font-size: 16px;
+    }
   }
   span {
     font-size: 20px;
+    @media screen and (max-width: 500px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -68,38 +78,52 @@ const Genre = styled.div`
     background-color: ${mainStyle.mainColor};
   }
 `;
+const params = {
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+};
 
 export const TvSlide = ({ data, red, title }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <SlideWrap>
       <TvTitle>
         <span>{red}</span>
         {title}
       </TvTitle>
-      <Swiper modules={[Navigation]} spaceBetween={20} slidesPerView={4}>
+      <Swiper modules={[Navigation]} navigation {...params}>
         {data.map((tvdata) => (
           <SwiperSlide>
             <TvImgWrap>
-              <TvImg
-                style={{
-                  background: `url(${
-                    tvdata.backdrop_path
-                      ? `${imgUrl}/${tvdata.poster_path}`
-                      : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
-                  }) no-repeat center / cover`,
-                }}
-              />
-              <TvCon className="tvcontents">
-                <h1>{tvdata.name}</h1>
-                <Genre>
-                  {tvdata.genre_ids.map((genreid) => (
-                    <div className="genres">{genreid}</div>
-                  ))}
-                </Genre>
-                <p>{tvdata.vote_average}점</p>
-                <span>{tvdata.adult ? "19+" : "Everybody"}</span>
-              </TvCon>
+              <Link to={`/tv_detail/${tvdata.id}`}>
+                <TvImg
+                  style={{
+                    background: `url(${
+                      tvdata.backdrop_path
+                        ? `${imgUrl}/${tvdata.poster_path}`
+                        : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                    }) no-repeat center / cover`,
+                  }}
+                />{" "}
+                <TvCon className="tvcontents">
+                  <h1>{tvdata.name}</h1>
+                  <Genre>
+                    {tvdata.genre_ids.map((genreid) => (
+                      <div className="genres">{genreid}</div>
+                    ))}
+                  </Genre>
+                  <p>{tvdata.vote_average}점</p>
+                  <span>{tvdata.adult ? "19+" : "Everybody"}</span>
+                </TvCon>
+              </Link>
             </TvImgWrap>
           </SwiperSlide>
         ))}

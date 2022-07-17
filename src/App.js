@@ -9,9 +9,10 @@ import { NotFound } from "./conponents/pages/NotFound";
 import { Header } from "./conponents/Header";
 import { Footer } from "./conponents/Footer";
 import { Search } from "./conponents/pages/search/Search";
-
 import { Banner } from "./conponents/pages/home/Banner";
 import { BannerPlay } from "./conponents/pages/home/BannerPlay";
+import { MovieDetail } from "./conponents/pages/detail/MovieDetail";
+import { TvDetail } from "./conponents/pages/detail/TvDetail";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           <Route path="/hot" element={<Hot />} />
           <Route path="/search" element={<Search />} />
           <Route path="/*" element={<NotFound />} />
-
+          <Route path="/tv_detail/:id" element={<TvDetail />} />
+          <Route path="/mv_detail/:id" element={<MovieDetail />} />
           <Route path="/banner" element={<Banner />} />
           <Route path="/bannerplay" element={<BannerPlay />} />
         </Routes>

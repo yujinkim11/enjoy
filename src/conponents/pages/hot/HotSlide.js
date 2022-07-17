@@ -4,11 +4,15 @@ import styled from "styled-components";
 import { imgUrl } from "../../../constants/constants";
 import { Navigation } from "swiper";
 import { mainStyle } from "../../../styles/globalstyle";
+import { Link } from "react-router-dom";
 
 const SlideWrap = styled.div`
   padding: ${mainStyle.padding};
   margin-top: 100px;
-  width: 100%; ;
+  width: 100%;
+  @media screen and (max-width: 500px) {
+    padding: ${mainStyle.moPadding};
+  }
 `;
 
 const HotImgWrap = styled.div`
@@ -22,14 +26,6 @@ const HotImgWrap = styled.div`
   }
 `;
 
-const MvTitle = styled.h3`
-  font-size: 30px;
-  font-weight: 700;
-  span {
-    color: ${mainStyle.mainColor};
-  }
-`;
-
 const HotCon = styled.div`
   position: absolute;
   top: 37%;
@@ -39,14 +35,23 @@ const HotCon = styled.div`
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 10px;
+    @media screen and (max-width: 500px) {
+      font-size: 30px;
+    }
   }
 
   p {
     font-size: 20px;
     margin: 10px 0;
+    @media screen and (max-width: 500px) {
+      font-size: 16px;
+    }
   }
   span {
     font-size: 20px;
+    @media screen and (max-width: 500px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -71,37 +76,52 @@ const Genre = styled.div`
   }
 `;
 
+const params = {
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+};
+
 export const HotSlide = ({ hotData }) => {
   // console.log("hot", hotData);
   return (
     <>
       <SlideWrap>
-        <Swiper modules={[Navigation]} spaceBetween={20} slidesPerView={4}>
+        <Swiper modules={[Navigation]} navigation {...params}>
           {hotData.map((hot) => (
             <SwiperSlide>
               <HotImgWrap>
-                <HotImg
-                  style={{
-                    background: `url(${
-                      hot.backdrop_path
-                        ? `${imgUrl}${hot.backdrop_path}`
-                        : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
-                    }) no-repeat center / cover`,
-                  }}
-                />
-                <HotCon className="hotcontents">
-                  <h1>
-                    {hot.title}
-                    {hot.name}
-                  </h1>
-                  <Genre>
-                    {hot.genre_ids.map((genreid) => (
-                      <div className="genres">{genreid}</div>
-                    ))}
-                  </Genre>
-                  <p>{hot.vote_average}점</p>
-                  <span>{hot.adult ? "19+" : "Everybody"}</span>
-                </HotCon>
+                <Link to={`/tv_detail/${hotData.id}`}>
+                  <HotImg
+                    style={{
+                      background: `url(${
+                        hot.backdrop_path
+                          ? `${imgUrl}${hot.backdrop_path}`
+                          : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                      }) no-repeat center / cover`,
+                    }}
+                  />
+                  <HotCon className="hotcontents">
+                    <h1>
+                      {hot.title}
+                      {hot.name}
+                    </h1>
+                    <Genre>
+                      {hot.genre_ids.map((genreid) => (
+                        <div className="genres">{genreid}</div>
+                      ))}
+                    </Genre>
+                    <p>{hot.vote_average}점</p>
+                    <span>{hot.adult ? "19+" : "Everybody"}</span>
+                  </HotCon>
+                </Link>
               </HotImgWrap>
             </SwiperSlide>
           ))}
