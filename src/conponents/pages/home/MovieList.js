@@ -81,6 +81,7 @@ const Genre = styled.div`
     background-color: ${mainStyle.mainColor};
   }
 `;
+
 const params = {
   breakpoints: {
     320: {
@@ -96,31 +97,42 @@ const params = {
 
 export const MovieList = ({ movie, red, title }) => {
   return (
-    <MvWrap>
-      <Title>
-        <span>{red}</span> {title}
-      </Title>
-      <Swiper modules={[Navigation]} navigation {...params}>
-        {movie.map((play) => (
-          <SwiperSlide key={play.id}>
-            <Link to={`/mv_detail/${play.id}`}>
-              <MvImgWrap>
-                <MvImg
-                  style={{
-                    background: `url(${imgUrl}${play.backdrop_path}) no-repeat center/cover`,
-                  }}
-                />
-                <MvCon className="mvcontents">
-                  <h1>{play.title}</h1>
-                  <Genre>장르</Genre>
-                  <p>{play.vote_average}점</p>
-                  <span>{play.adult ? "19+" : "Everybody"}</span>
-                </MvCon>
-              </MvImgWrap>
-            </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </MvWrap>
+    <>
+      {movie && (
+        <>
+          <MvWrap>
+            <Title>
+              <span>{red}</span> {title}
+            </Title>
+            <Swiper modules={[Navigation]} navigation {...params}>
+              {movie.map((play) => (
+                <SwiperSlide key={play.id}>
+                  <Link to={`/mv_detail/${play.id}`}>
+                    <MvImgWrap>
+                      <MvImg
+                        style={{
+                          background: `url(${imgUrl}${play.backdrop_path}) no-repeat center/cover`,
+                        }}
+                      />
+                      <MvCon className="mvcontents">
+                        <h1>{play.title}</h1>
+                        <Genre>
+                          {/* {" "}
+                          {movie.genres.map((mvgenre) => (
+                            <Gen key={mvgenre.id}>▷ {mvgenre.name}</Gen>
+                          ))} */}
+                        </Genre>
+                        <p>{play.vote_average}점</p>
+                        <span>{play.adult ? "19+" : "Everybody"}</span>
+                      </MvCon>
+                    </MvImgWrap>
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </MvWrap>
+        </>
+      )}
+    </>
   );
 };

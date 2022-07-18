@@ -10,7 +10,6 @@ import "swiper/css/scrollbar";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { imgUrl } from "../../../constants/constants";
-import { mainStyle } from "../../../styles/globalstyle";
 
 const MainbannerWrap = styled.div`
   height: 75vh;
@@ -83,89 +82,87 @@ const Gen = styled.p``;
 
 export const Mainbanner = ({ tvPopular }) => {
   return (
-    <MainbannerWrap>
-      <Swiper
-        modules={[Scrollbar, Autoplay]}
-        spaceBetween={50}
-        slidesPerView={1}
-        autoplay={{ delay: 3000 }}
-      >
-        <SwiperSlide
-          style={{
-            background: `url(${imgUrl}${tvPopular[0].backdrop_path}) no-repeat center / cover`,
-          }}
-        >
-          <ConWrap>
-            <Title>'{tvPopular[0].name}'</Title>
+    <>
+      {tvPopular && (
+        <MainbannerWrap>
+          <Swiper
+            modules={[Scrollbar, Autoplay]}
+            spaceBetween={50}
+            slidesPerView={1}
+            autoplay={{ delay: 3000 }}
+          >
+            <SwiperSlide
+              style={{
+                background: `url(${imgUrl}${tvPopular[0].backdrop_path}) no-repeat center / cover`,
+              }}
+            >
+              <ConWrap>
+                <Title>'{tvPopular[0].name}'</Title>
 
-            <BoxWrap>
-              <p>
-                {tvPopular[0].adult ? "19+" : "Everybody"} |
-                <span>
-                  {/* {tvPopular &&
-                    tvPopular[0].genres.map((bngenre) => (
-                      <Gen key={bngenre.id}>▷ {bngenre.name}</Gen>
-                    ))} */}
-                </span>
-                | {tvPopular[0].first_air_date}
-              </p>
-            </BoxWrap>
-            <Con>{tvPopular[0].overview.slice(0, 70) + "..."}</Con>
-            <Link to={`/banner/${tvPopular[0].id}`}>
-              <PlayBox>
-                <FontAwesomeIcon icon={faPlay} />
-                <p>보러가기</p>
-              </PlayBox>
-            </Link>
-          </ConWrap>
-        </SwiperSlide>
-        <SwiperSlide
-          style={{
-            background: `url(${imgUrl}${tvPopular[1].backdrop_path}) no-repeat center / cover`,
-          }}
-        >
-          <ConWrap>
-            <Title>'{tvPopular[1].name}'</Title>
+                <BoxWrap>
+                  <p>
+                    {tvPopular[0].adult ? "19+" : "Everybody"} |
+                    <span>장르</span>| {tvPopular[0].first_air_date}
+                  </p>
+                </BoxWrap>
+                <Con>{tvPopular[0].overview.slice(0, 70) + "..."}</Con>
+                <Link to={`/banner/${tvPopular[0].id}`}>
+                  <PlayBox>
+                    <FontAwesomeIcon icon={faPlay} />
+                    <p>보러가기</p>
+                  </PlayBox>
+                </Link>
+              </ConWrap>
+            </SwiperSlide>
+            <SwiperSlide
+              style={{
+                background: `url(${imgUrl}${tvPopular[1].backdrop_path}) no-repeat center / cover`,
+              }}
+            >
+              <ConWrap>
+                <Title>'{tvPopular[1].name}'</Title>
 
-            <BoxWrap>
-              <p>
-                {tvPopular[1].adult ? "19+" : "Everybody"} |<span>장르</span>|{" "}
-                {tvPopular[1].first_air_date}
-              </p>
-            </BoxWrap>
-            <Con>{tvPopular[1].overview.slice(0, 70) + "..."}</Con>
-            <Link to={"/banner"}>
-              <PlayBox>
-                <FontAwesomeIcon icon={faPlay} />
-                <p>보러가기</p>
-              </PlayBox>
-            </Link>
-          </ConWrap>
-        </SwiperSlide>
-        <SwiperSlide
-          style={{
-            background: `url(${imgUrl}${tvPopular[2].backdrop_path}) no-repeat center / cover`,
-          }}
-        >
-          <ConWrap>
-            <Title>'{tvPopular[2].name}'</Title>
+                <BoxWrap>
+                  <p>
+                    {tvPopular[1].adult ? "19+" : "Everybody"} |
+                    <span>장르</span>| {tvPopular[1].first_air_date}
+                  </p>
+                </BoxWrap>
+                <Con>{tvPopular[1].overview.slice(0, 70) + "..."}</Con>
+                <Link to={"/banner"}>
+                  <PlayBox>
+                    <FontAwesomeIcon icon={faPlay} />
+                    <p>보러가기</p>
+                  </PlayBox>
+                </Link>
+              </ConWrap>
+            </SwiperSlide>
+            <SwiperSlide
+              style={{
+                background: `url(${imgUrl}${tvPopular[2].backdrop_path}) no-repeat center / cover`,
+              }}
+            >
+              <ConWrap>
+                <Title>'{tvPopular[2].name}'</Title>
 
-            <BoxWrap>
-              <p>
-                {tvPopular[2].adult ? "19+" : "Everybody"} |<span>장르</span>|{" "}
-                {tvPopular[2].first_air_date}
-              </p>
-            </BoxWrap>
-            <Con>{tvPopular[2].overview.slice(0, 70) + "..."}</Con>
-            <Link to={"/Banner"}>
-              <PlayBox>
-                <FontAwesomeIcon icon={faPlay} />
-                <p>보러가기</p>
-              </PlayBox>
-            </Link>
-          </ConWrap>
-        </SwiperSlide>
-      </Swiper>
-    </MainbannerWrap>
+                <BoxWrap>
+                  <p>
+                    {tvPopular[2].adult ? "19+" : "Everybody"} |
+                    <span>장르</span>| {tvPopular[2].first_air_date}
+                  </p>
+                </BoxWrap>
+                <Con>{tvPopular[2].overview.slice(0, 70) + "..."}</Con>
+                <Link to={"/Banner"}>
+                  <PlayBox>
+                    <FontAwesomeIcon icon={faPlay} />
+                    <p>보러가기</p>
+                  </PlayBox>
+                </Link>
+              </ConWrap>
+            </SwiperSlide>
+          </Swiper>
+        </MainbannerWrap>
+      )}
+    </>
   );
 };

@@ -122,58 +122,62 @@ export const HotBabnner = ({ bndata }) => {
 
   return (
     <>
-      <BannerWrap>
-        <PosterWrap>
-          <HotPoster
-            style={{
-              background: `url(${
-                bndata.backdrop_path
-                  ? `${imgUrl}${bndata.backdrop_path}`
-                  : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
-              }) no-repeat center / cover`,
-            }}
-          />
-        </PosterWrap>
+      {bndata && (
+        <>
+          <BannerWrap>
+            <PosterWrap>
+              <HotPoster
+                style={{
+                  background: `url(${
+                    bndata.backdrop_path
+                      ? `${imgUrl}${bndata.backdrop_path}`
+                      : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                  }) no-repeat center / cover`,
+                }}
+              />
+            </PosterWrap>
 
-        <HotConWrap>
-          <HotTitle>지금 가장 HOT!한 콘텐츠</HotTitle>
-          <HotContent>
-            <p>
-              블록버스터 영화부터 아트 영화, 인기 애니메이션, 드라마, 예능 등
-              모든 작품을 감상하세요. 취향에 맞는 작품을 선별하여 추천해드릴게요
-              :)
-            </p>
-          </HotContent>
-        </HotConWrap>
-      </BannerWrap>
-      <HotCategoryWrap>
-        <HotCategory>
-          <span
-            onClick={() => {
-              setPosi("80%");
-            }}
-          >
-            전체
-          </span>{" "}
-          <span
-            onClick={() => {
-              setPosi("40%");
-            }}
-          >
-            드라마
-          </span>
-          <span
-            onClick={() => {
-              setPosi("0%");
-            }}
-          >
-            영화
-          </span>
-        </HotCategory>
-        <CategoryBar>
-          <ChoiceBar posi={posi} />
-        </CategoryBar>
-      </HotCategoryWrap>
+            <HotConWrap>
+              <HotTitle>지금 가장 HOT!한 콘텐츠</HotTitle>
+              <HotContent>
+                <p>
+                  블록버스터 영화부터 아트 영화, 인기 애니메이션, 드라마, 예능
+                  등 모든 작품을 감상하세요. 취향에 맞는 작품을 선별하여
+                  추천해드릴게요 :)
+                </p>
+              </HotContent>
+            </HotConWrap>
+          </BannerWrap>
+          <HotCategoryWrap>
+            <HotCategory>
+              <span
+                onClick={() => {
+                  setPosi("80%");
+                }}
+              >
+                전체
+              </span>{" "}
+              <span
+                onClick={() => {
+                  setPosi("40%");
+                }}
+              >
+                드라마
+              </span>
+              <span
+                onClick={() => {
+                  setPosi("0%");
+                }}
+              >
+                영화
+              </span>
+            </HotCategory>
+            <CategoryBar>
+              <ChoiceBar posi={posi} />
+            </CategoryBar>
+          </HotCategoryWrap>
+        </>
+      )}
     </>
   );
 };

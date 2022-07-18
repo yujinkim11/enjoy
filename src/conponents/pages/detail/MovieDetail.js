@@ -58,13 +58,6 @@ const MvGenre = styled.ul`
   }
 `;
 
-const Gen = styled.p`
-  margin-right: 10px;
-  @media screen and (max-width: 500px) {
-    font-size: 20px;
-  }
-`;
-
 const MvTime = styled.div`
   display: flex;
   margin-bottom: 20px;
@@ -182,9 +175,9 @@ export const MovieDetail = () => {
                   <MvdetailWrap>
                     <MvTitle>{mvdetail.title}</MvTitle>
                     <MvGenre>
-                      {mvdetail.genres.map((mvgenre) => (
+                      {/* {mvdetail.genres.map((mvgenre) => (
                         <Gen key={mvgenre.id}>▷ {mvgenre.name}</Gen>
-                      ))}
+                      ))} */}
                     </MvGenre>
                     <MvTime>
                       <p>{mvdetail.release_date}</p> |{" "}
