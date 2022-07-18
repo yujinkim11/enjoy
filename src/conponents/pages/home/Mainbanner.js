@@ -38,58 +38,8 @@ const Title = styled.h3`
 
 const BoxWrap = styled.div`
   display: flex;
-`;
-
-const Box1 = styled.div`
-  border: 1px solid white;
-  border-radius: 10px;
-  width: 80px;
-  height: 30px;
-  font-size: 20px;
-  font-weight: 300;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-  @media screen and (max-width: 500px) {
-    width: 50px;
-    height: 30px;
-    font-size: 16px;
-  }
-`;
-
-const Box2 = styled.div`
-  border: 1px solid white;
-  border-radius: 10px;
-  width: 80px;
-  height: 30px;
-  font-size: 20px;
-  font-weight: 300;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-  @media screen and (max-width: 500px) {
-    width: 50px;
-    height: 30px;
-    font-size: 16px;
-  }
-`;
-
-const Box3 = styled.div`
-  border: 1px solid white;
-  border-radius: 10px;
-  width: 80px;
-  height: 30px;
-  font-size: 20px;
-  font-weight: 300;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media screen and (max-width: 500px) {
-    width: 50px;
-    height: 30px;
-    font-size: 16px;
+  p {
+    font-size: 22px;
   }
 `;
 
@@ -147,9 +97,10 @@ export const Mainbanner = ({ tvPopular }) => {
             <Title>'{tvPopular[0].name}'</Title>
 
             <BoxWrap>
-              <Box1>15+</Box1>
-              <Box2>드라마</Box2>
-              <Box3>휴먼물</Box3>
+              <p>
+                {tvPopular[0].adult ? "19+" : "Everybody"} |<span>장르</span>|{" "}
+                {tvPopular[0].first_air_date}
+              </p>
             </BoxWrap>
             <Con>{tvPopular[0].overview.slice(0, 70) + "..."}</Con>
             <Link to={"/Banner"}>
@@ -169,9 +120,10 @@ export const Mainbanner = ({ tvPopular }) => {
             <Title>'{tvPopular[1].name}'</Title>
 
             <BoxWrap>
-              <Box1>15+</Box1>
-              <Box2>드라마</Box2>
-              <Box3>휴먼물</Box3>
+              <p>
+                {tvPopular[1].adult ? "19+" : "Everybody"} |<span>장르</span>|{" "}
+                {tvPopular[1].first_air_date}
+              </p>
             </BoxWrap>
             <Con>{tvPopular[1].overview.slice(0, 70) + "..."}</Con>
             <Link to={"/Banner"}>
@@ -191,9 +143,10 @@ export const Mainbanner = ({ tvPopular }) => {
             <Title>'{tvPopular[2].name}'</Title>
 
             <BoxWrap>
-              <Box1>15+</Box1>
-              <Box2>드라마</Box2>
-              <Box3>휴먼물</Box3>
+              <p>
+                {tvPopular[2].adult ? "19+" : "Everybody"} |<span>장르</span>|{" "}
+                {tvPopular[2].first_air_date}
+              </p>
             </BoxWrap>
             <Con>{tvPopular[2].overview.slice(0, 70) + "..."}</Con>
             <Link to={"/Banner"}>

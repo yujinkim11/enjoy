@@ -34,7 +34,7 @@ const Title = styled.div`
   font-weight: 900;
 `;
 const Info = styled.div`
-  font-size: 20px;
+  font-size: 22px;
   margin: 40px 0;
 `;
 const Poster = styled.div`
@@ -156,7 +156,7 @@ export const Banner = () => {
                   <Title>{popular[0].name}</Title>
                   <Info>
                     <p>
-                      {popular.adult ? "19+" : "Everybody"} |<span></span>|{" "}
+                      {popular.adult ? "19+" : "Everybody"} |<span>장르</span>|{" "}
                       {popular[0].first_air_date}
                     </p>
                   </Info>
