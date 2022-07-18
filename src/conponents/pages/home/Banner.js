@@ -11,7 +11,7 @@ import { imgUrl } from "../../../constants/constants";
 
 const SubMainWrap = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 75vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -55,7 +55,7 @@ const PlayBox = styled.div`
   height: 80px;
   border: 2px solid white;
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,9 +106,9 @@ export const Banner = () => {
   const [color, setColor] = useState();
   const [bookcolor, setBookColor] = useState();
   const [tvdetail, setTvDetail] = useState();
-
+  const { id } = useParams();
   const [loading, setLoading] = useState(true);
-
+  console.log(id);
   const handleHeart = () => {
     if (color !== "#FF1F5A") {
       setColor("#FF1F5A");
@@ -135,8 +135,8 @@ export const Banner = () => {
         } = await tvApi.popular();
         setPopular(popularData);
 
-        // const { data: tvdetail } = await tvApi.tvDetail();
-        // setTvDetail(tvdetail);
+        const { data: tvdetail } = await tvApi.tvDetail(id);
+        setTvDetail(tvdetail);
 
         setLoading(false);
       } catch (error) {}

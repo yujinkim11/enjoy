@@ -79,6 +79,8 @@ const PlayBox = styled.div`
   }
 `;
 
+const Gen = styled.p``;
+
 export const Mainbanner = ({ tvPopular }) => {
   return (
     <MainbannerWrap>
@@ -98,12 +100,18 @@ export const Mainbanner = ({ tvPopular }) => {
 
             <BoxWrap>
               <p>
-                {tvPopular[0].adult ? "19+" : "Everybody"} |<span>장르</span>|{" "}
-                {tvPopular[0].first_air_date}
+                {tvPopular[0].adult ? "19+" : "Everybody"} |
+                <span>
+                  {/* {tvPopular &&
+                    tvPopular[0].genres.map((bngenre) => (
+                      <Gen key={bngenre.id}>▷ {bngenre.name}</Gen>
+                    ))} */}
+                </span>
+                | {tvPopular[0].first_air_date}
               </p>
             </BoxWrap>
             <Con>{tvPopular[0].overview.slice(0, 70) + "..."}</Con>
-            <Link to={"/banner"}>
+            <Link to={`/banner/${tvPopular[0].id}`}>
               <PlayBox>
                 <FontAwesomeIcon icon={faPlay} />
                 <p>보러가기</p>

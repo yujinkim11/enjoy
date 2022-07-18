@@ -53,6 +53,12 @@ const Bg = styled.div`
   height: 300px;
 `;
 
+const SearchMessage = styled.p`
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 20px;
+`;
+
 export const Search = () => {
   const [searchResult, setSearchResult] = useState();
   const [tvResult, setTvResult] = useState();
@@ -128,8 +134,8 @@ export const Search = () => {
               placeholder="검색어 입력"
             ></Input>
 
-            {errors?.search?.message}
-            {errors?.result?.message}
+            <SearchMessage>{errors?.search?.message}</SearchMessage>
+            <SearchMessage>{errors?.result?.message}</SearchMessage>
           </form>
         </SearchWrap>
 

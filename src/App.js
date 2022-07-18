@@ -29,7 +29,7 @@ function App() {
           <Route path="/*" element={<NotFound />} />
           <Route path="/tv_detail/:id" element={<TvDetail />} />
           <Route path="/mv_detail/:id" element={<MovieDetail />} />
-          <Route path="/banner" element={<Banner />} />
+          <Route path="/banner/:id" element={<Banner />} />
           <Route path="/bannerplay" element={<BannerPlay />} />
         </Routes>
         <Footer />

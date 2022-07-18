@@ -3,7 +3,7 @@ import { mainStyle } from "../../../styles/globalstyle";
 
 const SearchBoxWrap = styled.div`
   padding: ${mainStyle.padding};
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
 `;
