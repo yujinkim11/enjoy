@@ -106,7 +106,7 @@ export const Mainbanner = ({ tvPopular }) => {
                   </p>
                 </BoxWrap>
                 <Con>{tvPopular[0].overview.slice(0, 70) + "..."}</Con>
-                <Link to={`/banner/${tvPopular[0].id}`}>
+                <Link to={`/tv_detail/${tvPopular[0].id}`}>
                   <PlayBox>
                     <FontAwesomeIcon icon={faPlay} />
                     <p>보러가기</p>
@@ -129,7 +129,7 @@ export const Mainbanner = ({ tvPopular }) => {
                   </p>
                 </BoxWrap>
                 <Con>{tvPopular[1].overview.slice(0, 70) + "..."}</Con>
-                <Link to={"/banner"}>
+                <Link to={`/tv_detail/${tvPopular[1].id}`}>
                   <PlayBox>
                     <FontAwesomeIcon icon={faPlay} />
                     <p>보러가기</p>
@@ -152,7 +152,7 @@ export const Mainbanner = ({ tvPopular }) => {
                   </p>
                 </BoxWrap>
                 <Con>{tvPopular[2].overview.slice(0, 70) + "..."}</Con>
-                <Link to={"/Banner"}>
+                <Link to={`/tv_detail/${tvPopular[2].id}`}>
                   <PlayBox>
                     <FontAwesomeIcon icon={faPlay} />
                     <p>보러가기</p>

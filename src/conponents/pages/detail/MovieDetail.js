@@ -123,6 +123,8 @@ const IFrame = styled.iframe`
   }
 `;
 
+const Gen = styled.p``;
+
 export const MovieDetail = () => {
   const [mvdetail, setMvDetail] = useState();
   const [mvvideo, setMvVideo] = useState();
@@ -138,6 +140,7 @@ export const MovieDetail = () => {
       try {
         const { data: detail } = await mvApi.movieDetail(id);
         setMvDetail(detail);
+        console.log(mvdetail);
 
         setMvVideo(results.length === 0 ? null : results[0].key);
 
@@ -171,13 +174,13 @@ export const MovieDetail = () => {
           >
             <BlackBox>
               <Container>
-                {mvdetail && mvvideo && (
+                {mvdetail && (
                   <MvdetailWrap>
                     <MvTitle>{mvdetail.title}</MvTitle>
                     <MvGenre>
-                      {/* {mvdetail.genres.map((mvgenre) => (
+                      {mvdetail.genres.map((mvgenre) => (
                         <Gen key={mvgenre.id}>▷ {mvgenre.name}</Gen>
-                      ))} */}
+                      ))}
                     </MvGenre>
                     <MvTime>
                       <p>{mvdetail.release_date}</p> |{" "}

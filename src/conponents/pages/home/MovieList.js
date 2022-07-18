@@ -95,6 +95,8 @@ const params = {
   },
 };
 
+const Gen = styled.p``;
+
 export const MovieList = ({ movie, red, title }) => {
   return (
     <>
@@ -117,10 +119,10 @@ export const MovieList = ({ movie, red, title }) => {
                       <MvCon className="mvcontents">
                         <h1>{play.title}</h1>
                         <Genre>
-                          {/* {" "}
-                          {movie.genres.map((mvgenre) => (
-                            <Gen key={mvgenre.id}>▷ {mvgenre.name}</Gen>
-                          ))} */}
+                          {/* {movie &&
+                            movie.genres.map((mvgenre) => (
+                              <Gen key={mvgenre.id}>▷ {mvgenre.name}</Gen>
+                            ))} */}
                         </Genre>
                         <p>{play.vote_average}점</p>
                         <span>{play.adult ? "19+" : "Everybody"}</span>
