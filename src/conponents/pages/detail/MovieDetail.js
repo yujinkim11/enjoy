@@ -6,7 +6,6 @@ import { Container } from "../../Container";
 import { Loading } from "../../Loading";
 import { imgUrl } from "../../../constants/constants";
 import { ScrollTop } from "../../../ScrollTop";
-import { mainStyle } from "../../../styles/globalstyle";
 
 const MvdetailWrap = styled.div`
   padding-top: 220px;
@@ -24,6 +23,11 @@ const MvPoster = styled.div`
   @media screen and (max-width: 500px) {
     height: 100vh;
   }
+`;
+const BlackBox = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
 const MvScore = styled.div`
@@ -86,9 +90,8 @@ const MvCon = styled.p`
 `;
 
 const MenuWrap = styled.ul`
-  padding: ${mainStyle.padding};
+  margin-top: 115px;
   @media screen and (max-width: 500px) {
-    padding: ${mainStyle.moPadding};
   }
 `;
 
@@ -110,8 +113,9 @@ const Play = styled.div`
   @media screen and (max-width: 500px) {
     width: 250px;
     height: 60px;
-    margin-top: -220px;
+    margin-top: -80px;
     font-size: 24px;
+    padding-left: 0;
   }
 `;
 
@@ -172,32 +176,34 @@ export const MovieDetail = () => {
               }) no-repeat center / cover`,
             }}
           >
-            <Container>
-              {mvdetail && mvvideo && (
-                <MvdetailWrap>
-                  <MvTitle>{mvdetail.title}</MvTitle>
-                  <MvGenre>
-                    {mvdetail.genres.map((mvgenre) => (
-                      <Gen key={mvgenre.id}>▷ {mvgenre.name}</Gen>
-                    ))}
-                  </MvGenre>
-                  <MvTime>
-                    <p>{mvdetail.release_date}</p> |{" "}
-                    <span>{mvdetail.runtime}분</span>
-                  </MvTime>
-                  <MvScore>{mvdetail.vote_average}점</MvScore>
-                  <MvCon>{mvdetail.overview.slice(0, 150) + "..."}</MvCon>
-                </MvdetailWrap>
-              )}
-            </Container>
-
-            <MenuWrap>
-              <Play onClick={handleClick}>
-                <i class="fa-solid fa-play"></i>
-                <p>예고편 보기</p>
-              </Play>
-            </MenuWrap>
+            <BlackBox>
+              <Container>
+                {mvdetail && mvvideo && (
+                  <MvdetailWrap>
+                    <MvTitle>{mvdetail.title}</MvTitle>
+                    <MvGenre>
+                      {mvdetail.genres.map((mvgenre) => (
+                        <Gen key={mvgenre.id}>▷ {mvgenre.name}</Gen>
+                      ))}
+                    </MvGenre>
+                    <MvTime>
+                      <p>{mvdetail.release_date}</p> |{" "}
+                      <span>{mvdetail.runtime}분</span>
+                    </MvTime>
+                    <MvScore>{mvdetail.vote_average}점</MvScore>
+                    <MvCon>{mvdetail.overview.slice(0, 150) + "..."}</MvCon>
+                    <MenuWrap>
+                      <Play onClick={handleClick}>
+                        <i class="fa-solid fa-play"></i>
+                        <p>예고편 보기</p>
+                      </Play>
+                    </MenuWrap>
+                  </MvdetailWrap>
+                )}
+              </Container>
+            </BlackBox>
           </MvPoster>
+
           <Container>
             {mvvideo ? (
               <IFrame

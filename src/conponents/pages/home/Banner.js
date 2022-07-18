@@ -1,7 +1,7 @@
 import { faBookmark, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { tvApi } from "../../../api";
 import { mainStyle } from "../../../styles/globalstyle";
@@ -105,31 +105,38 @@ export const Banner = () => {
   const [popular, setPopular] = useState();
   const [color, setColor] = useState();
   const [bookcolor, setBookColor] = useState();
+  const [tvdetail, setTvDetail] = useState();
+
   const [loading, setLoading] = useState(true);
 
   const handleHeart = () => {
-    if (color !== "red") {
-      setColor("red");
+    if (color !== "#FF1F5A") {
+      setColor("#FF1F5A");
     } else {
-      setColor("white");
+      setColor("#DFDFDF");
     }
   };
 
   const handleBook = () => {
-    if (bookcolor !== "yellow") {
-      setBookColor("yellow");
+    if (bookcolor !== "#575757") {
+      setBookColor("#575757");
     } else {
-      setBookColor("white");
+      setBookColor("#DFDFDF");
     }
   };
 
   useEffect(() => {
+    // console.log(tvdetail);
+
     const bannerData = async () => {
       try {
         const {
           data: { results: popularData },
         } = await tvApi.popular();
         setPopular(popularData);
+
+        // const { data: tvdetail } = await tvApi.tvDetail();
+        // setTvDetail(tvdetail);
 
         setLoading(false);
       } catch (error) {}
@@ -177,7 +184,7 @@ export const Banner = () => {
                 <RoundTitle>
                   <h3>{popular[0].name}</h3>
                   <Heart color={color} onClick={handleHeart}>
-                    <FontAwesomeIcon icon={faHeart} />
+                    ♡
                   </Heart>
                   <Bookmark bookcolor={bookcolor} onClick={handleBook}>
                     <FontAwesomeIcon icon={faBookmark} />

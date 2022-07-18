@@ -26,6 +26,12 @@ const TvPoster = styled.div`
   }
 `;
 
+const BlackBox = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+`;
+
 const TvScore = styled.div`
   margin-bottom: 20px;
   @media screen and (max-width: 500px) {
@@ -82,13 +88,13 @@ const TvCon = styled.p`
   @media screen and (max-width: 500px) {
     width: 250px;
     font-size: 18px;
+    margin-top: -720px;
   }
 `;
 
 const MenuWrap = styled.ul`
-  padding: ${mainStyle.padding};
+  margin-top: 115px;
   @media screen and (max-width: 500px) {
-    padding: ${mainStyle.moPadding};
   }
 `;
 
@@ -110,7 +116,7 @@ const Play = styled.div`
   @media screen and (max-width: 500px) {
     width: 250px;
     height: 60px;
-    margin-top: -220px;
+    margin-top: -20px;
     font-size: 24px;
   }
 `;
@@ -172,32 +178,34 @@ export const TvDetail = () => {
               }) no-repeat center / cover`,
             }}
           >
-            <Container>
-              {tvdetail && (
-                <TvdetailWrap>
-                  <TvTitle>{tvdetail.name}</TvTitle>
-                  <TvGenre>
-                    {tvdetail.genres.map((tvgenre) => (
-                      <Gen key={tvgenre.id}>▷ {tvgenre.name}</Gen>
-                    ))}
-                  </TvGenre>
-                  <TvTime>
-                    <p>{tvdetail.release_date}</p> |{" "}
-                    <span>{tvdetail.runtime}분</span>
-                  </TvTime>
-                  <TvScore>{tvdetail.vote_average}점</TvScore>
-                  <TvCon>{tvdetail.overview.slice(0, 150) + "..."}</TvCon>
-                </TvdetailWrap>
-              )}
-            </Container>
-
-            <MenuWrap>
-              <Play onClick={handleClick}>
-                <i class="fa-solid fa-play"></i>
-                <p>예고편 보기</p>
-              </Play>
-            </MenuWrap>
+            <BlackBox>
+              <Container>
+                {tvdetail && (
+                  <TvdetailWrap>
+                    <TvTitle>{tvdetail.name}</TvTitle>
+                    <TvGenre>
+                      {tvdetail.genres.map((tvgenre) => (
+                        <Gen key={tvgenre.id}>▷ {tvgenre.name}</Gen>
+                      ))}
+                    </TvGenre>
+                    <TvTime>
+                      <p>{tvdetail.release_date}</p> |{" "}
+                      <span>{tvdetail.runtime}분</span>
+                    </TvTime>
+                    <TvScore>{tvdetail.vote_average}점</TvScore>
+                    <TvCon>{tvdetail.overview.slice(0, 150) + "..."}</TvCon>
+                    <MenuWrap>
+                      <Play onClick={handleClick}>
+                        <i class="fa-solid fa-play"></i>
+                        <p>예고편 보기</p>
+                      </Play>
+                    </MenuWrap>
+                  </TvdetailWrap>
+                )}
+              </Container>
+            </BlackBox>
           </TvPoster>
+
           <Container>
             {tvvideo ? (
               <IFrame
