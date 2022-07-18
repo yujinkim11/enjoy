@@ -5,13 +5,13 @@ import { imgUrl } from "../../../constants/constants";
 import { mainStyle } from "../../../styles/globalstyle";
 
 const BannerWrap = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 60vh;
   background-color: #707070;
   margin-top: 80px;
   display: flex;
   align-items: flex-end;
-  padding: ${mainStyle.padding};
+
   @media screen and (max-width: 500px) {
     padding: ${mainStyle.moPadding};
     width: 100%;
@@ -23,7 +23,7 @@ const BannerWrap = styled.div`
 `;
 
 const PosterWrap = styled.div`
-  width: 100%;
+  padding-left: 150px;
   @media screen and (max-width: 500px) {
     padding: -20px;
   }
@@ -32,7 +32,6 @@ const PosterWrap = styled.div`
 const HotPoster = styled.div`
   width: 500px;
   height: 500px;
-  background-color: antiquewhite;
   margin-right: 50px;
   @media screen and (max-width: 500px) {
     width: 100%;
@@ -54,6 +53,7 @@ const HotTitle = styled.h3`
 `;
 const HotConWrap = styled.div`
   padding-bottom: 60px;
+
   @media screen and (max-width: 500px) {
   }
 `;

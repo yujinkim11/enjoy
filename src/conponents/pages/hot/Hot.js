@@ -4,8 +4,12 @@ import { HotSlide } from "./HotSlide";
 import { mvApi, tvApi } from "../../../api";
 import { Loading } from "../../Loading";
 import styled from "styled-components";
+import { mainStyle } from "../../../styles/globalstyle";
 
-const HotWrap = styled.div``;
+const HotWrap = styled.div`
+  width: 100%;
+  overflow: hidden;
+`;
 
 export const Hot = () => {
   const [mvpop, setMvPop] = useState();
