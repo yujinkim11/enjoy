@@ -66,6 +66,7 @@ const TvImg = styled.div`
   height: 450px;
   margin-top: 50px;
   :hover {
+    transform: scale(105%);
     opacity: 0.5;
     transition: 0.5s;
   }
