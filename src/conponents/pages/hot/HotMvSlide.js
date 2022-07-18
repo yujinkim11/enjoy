@@ -89,37 +89,33 @@ const params = {
   },
 };
 
-export const HotSlide = ({ hotData }) => {
+export const HotMvSlide = ({ hotmvData }) => {
   // console.log("hot", hotData);
   return (
     <>
       <SlideWrap>
         <Swiper modules={[Navigation]} navigation {...params}>
-          {hotData.map((hot) => (
+          {hotmvData.map((hotmv) => (
             <SwiperSlide>
               <HotImgWrap>
-                <Link to={`/tv_detail/${hotData.id}`}>
+                <Link to={`/mv_detail/${hotmv.id}`}>
                   <HotImg
                     style={{
                       background: `url(${
-                        hot.backdrop_path
-                          ? `${imgUrl}${hot.backdrop_path}`
+                        hotmv.backdrop_path
+                          ? `${imgUrl}${hotmv.backdrop_path}`
                           : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
                       }) no-repeat center / cover`,
                     }}
                   />
                   <HotCon className="hotcontents">
                     <h1>
-                      {hot.title}
-                      {hot.name}
+                      {hotmv.title}
+                      {hotmv.name}
                     </h1>
-                    <Genre>
-                      {hot.genre_ids.map((genreid) => (
-                        <div className="genres">{genreid}</div>
-                      ))}
-                    </Genre>
-                    <p>{hot.vote_average}점</p>
-                    <span>{hot.adult ? "19+" : "Everybody"}</span>
+                    <Genre></Genre>
+                    <p>{hotmv.vote_average}점</p>
+                    <span>{hotmv.adult ? "19+" : "Everybody"}</span>
                   </HotCon>
                 </Link>
               </HotImgWrap>

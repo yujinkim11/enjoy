@@ -183,7 +183,7 @@ export const MovieDetail = () => {
                       ))}
                     </MvGenre>
                     <MvTime>
-                      <p>{mvdetail.release_date}</p> |{" "}
+                      <p>{mvdetail.release_date}</p>{" "}
                       <span>{mvdetail.runtime}분</span>
                     </MvTime>
                     <MvScore>{mvdetail.vote_average}점</MvScore>

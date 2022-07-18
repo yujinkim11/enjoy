@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { imgUrl } from "../../../constants/constants";
 
@@ -157,20 +158,24 @@ export const HotBabnner = ({ bndata }) => {
               >
                 전체
               </span>{" "}
-              <span
-                onClick={() => {
-                  setPosi("40%");
-                }}
-              >
-                드라마
-              </span>
-              <span
-                onClick={() => {
-                  setPosi("0%");
-                }}
-              >
-                영화
-              </span>
+              <Link to={"/hot_drama"}>
+                <span
+                  onClick={() => {
+                    setPosi("40%");
+                  }}
+                >
+                  드라마
+                </span>
+              </Link>
+              <Link to={"/hot_movie"}>
+                <span
+                  onClick={() => {
+                    setPosi("0%");
+                  }}
+                >
+                  영화
+                </span>
+              </Link>
             </HotCategory>
             <CategoryBar>
               <ChoiceBar posi={posi} />
