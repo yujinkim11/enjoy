@@ -28,7 +28,9 @@ const TvProgramTitle = styled.h3`
 
 export const TvProgram = () => {
   const [tvpopular, setTvPopular] = useState();
-  const [latest, setlatest] = useState();
+  const [latest, setLatest] = useState();
+  const [top, setTop] = useState();
+  const [onair, setOnair] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -41,7 +43,16 @@ export const TvProgram = () => {
         const {
           data: { results: tvlatestData },
         } = await tvApi.latest();
-        setlatest(tvlatestData);
+        setLatest(tvlatestData);
+        const {
+          data: { results: tvtopData },
+        } = await tvApi.topRated();
+        setTop(tvtopData);
+        const {
+          data: { results: tvOnData },
+        } = await tvApi.tvOnair();
+        setOnair(tvOnData);
+
         setLoading(false);
       } catch (error) {}
     };
@@ -55,16 +66,16 @@ export const TvProgram = () => {
         <Loading />
       ) : (
         <>
-          {tvpopular && (
+          {tvpopular && top && latest && onair && (
             <TvProgramWrap>
               <TvProgramTitle>
                 <h3>TV프로그램</h3>
               </TvProgramTitle>
 
               <TvSlide data={tvpopular} red="TOP" title=" 인기 프로그램" />
+              <TvSlide data={top} title="뜨는 프로그램" />
               <TvSlide data={latest} title="새로 시작한 프로그램" />
-              {/* <TvSlide data={tvpopular} title="한국 드라마" /> */}
-              {/* <TvSlide data={tvpopular} title="애니메이션" /> */}
+              <TvSlide data={onair} title="ON AIR" />
             </TvProgramWrap>
           )}
         </>

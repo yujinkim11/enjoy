@@ -98,7 +98,7 @@ export const MvSlide = ({ mvdata, red, moviecate }) => {
             {mvdata.map((moviedata) => (
               <SwiperSlide>
                 <MovieImgWrap>
-                  <Link to={`/tv_detail/${moviedata.id}`}>
+                  <Link to={`/mv_detail/${moviedata.id}`}>
                     <MvImg
                       style={{
                         background: `url(${
