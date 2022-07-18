@@ -6,7 +6,6 @@ import { Container } from "../../Container";
 import { Loading } from "../../Loading";
 import { imgUrl } from "../../../constants/constants";
 import { ScrollTop } from "../../../ScrollTop";
-import { mainStyle } from "../../../styles/globalstyle";
 
 const TvdetailWrap = styled.div`
   padding-top: 220px;

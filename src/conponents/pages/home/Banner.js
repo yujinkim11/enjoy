@@ -118,8 +118,8 @@ export const Banner = () => {
   };
 
   const handleBook = () => {
-    if (bookcolor !== "#575757") {
-      setBookColor("#575757");
+    if (bookcolor !== "#E25A13") {
+      setBookColor("#E25A13");
     } else {
       setBookColor("#DFDFDF");
     }
@@ -184,10 +184,10 @@ export const Banner = () => {
                 <RoundTitle>
                   <h3>{popular[0].name}</h3>
                   <Heart color={color} onClick={handleHeart}>
-                    ♡
+                    <i class="fa-regular fa-heart"></i>
                   </Heart>
                   <Bookmark bookcolor={bookcolor} onClick={handleBook}>
-                    <FontAwesomeIcon icon={faBookmark} />
+                    <i class="fa-regular fa-bookmark"></i>
                   </Bookmark>
                 </RoundTitle>
                 <RoundContent>
