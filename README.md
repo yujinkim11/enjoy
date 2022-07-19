@@ -2,6 +2,10 @@
 
 프로젝트 소개 OTT 플랫폼을 기획, 디자인, 구현한 웹사이트입니다.
 
+### 구현 모습
+
+<img src="https://user-images.githubusercontent.com/106130311/179666202-c7f31d87-1e74-448a-8908-76e45e011c4a.png" width="900px" height="500px">
+
 ## 💡 주요 기능
 
 검색 기능 추가
