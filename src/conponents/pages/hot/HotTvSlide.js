@@ -29,6 +29,12 @@ const HotCon = styled.div`
   position: absolute;
   top: 37%;
   left: 10px;
+  @media screen and (max-width: 500px) {
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    padding-right: 5px;
+  }
 
   h1 {
     font-size: 40px;
@@ -36,6 +42,7 @@ const HotCon = styled.div`
     margin-bottom: 10px;
     @media screen and (max-width: 500px) {
       font-size: 30px;
+      width: 150px;
     }
   }
 

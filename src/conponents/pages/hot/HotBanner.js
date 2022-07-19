@@ -26,7 +26,7 @@ const BannerWrap = styled.div`
 const PosterWrap = styled.div`
   padding-left: 150px;
   @media screen and (max-width: 500px) {
-    padding: -20px;
+    display: none;
   }
 `;
 
@@ -35,8 +35,16 @@ const HotPoster = styled.div`
   height: 500px;
   margin-right: 50px;
   @media screen and (max-width: 500px) {
-    width: 100%;
-    height: 120px;
+  }
+`;
+
+const HotConWrap = styled.div`
+  padding-bottom: 60px;
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 `;
 
@@ -46,16 +54,16 @@ const HotTitle = styled.h3`
   color: #ff3268;
   padding-bottom: 30px;
   @media screen and (max-width: 500px) {
-    width: 90vw;
     font-size: 40px;
     font-weight: 700;
     margin-top: 50px;
-  }
-`;
-const HotConWrap = styled.div`
-  padding-bottom: 60px;
-
-  @media screen and (max-width: 500px) {
+    padding: ${mainStyle.moPadding};
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    span {
+      color: ${mainStyle.mainColor};
+    }
   }
 `;
 
@@ -66,6 +74,7 @@ const HotContent = styled.p`
   color: rgba(255, 255, 255, 0.7);
   line-height: 40px;
   @media screen and (max-width: 500px) {
+    margin-top: 20ppx;
     width: 80vw;
     font-size: 20px;
     line-height: 22px;
@@ -78,6 +87,7 @@ const HotCategoryWrap = styled.div`
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 500px) {
+    margin-top: -150px;
   }
 `;
 
@@ -139,7 +149,9 @@ export const HotBabnner = ({ bndata }) => {
             </PosterWrap>
 
             <HotConWrap>
-              <HotTitle>지금 가장 HOT!한 콘텐츠</HotTitle>
+              <HotTitle>
+                지금 가장 <span>HOT!</span>한 콘텐츠
+              </HotTitle>
               <HotContent>
                 <p>
                   블록버스터 영화부터 아트 영화, 인기 애니메이션, 드라마, 예능
