@@ -22,6 +22,7 @@
 
 ## 📝사용언어
 
+<img src="https://img.shields.io/badge/-javascript-yellow">
 자바스크립트 / Nodejs
 React
 
