@@ -139,8 +139,8 @@ export const TvSlide = ({ data, red, title }) => {
                             <Gen key={tvgenre.id}>▷ {tvgenre.name}</Gen>
                           ))} */}
                       </Genre>
-                      <p>{tvdata.vote_average}점</p>
-                      <span>{tvdata.adult ? "19+" : "Everybody"}</span>
+                      <p>⭐ {tvdata.vote_average}점</p>
+                      <span>{tvdata.adult ? "19+" : "전체이용가"}</span>
                     </TvCon>
                   </Link>
                 </TvImgWrap>

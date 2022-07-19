@@ -118,8 +118,8 @@ export const HotTvSub = ({ tvsubData }) => {
                         {subtv.name}
                       </h1>
                       <Genre></Genre>
-                      <p>{subtv.vote_average}점</p>
-                      <span>{subtv.adult ? "19+" : "Everybody"}</span>
+                      <p>⭐ {subtv.vote_average}점</p>
+                      <span>{subtv.adult ? "19+" : "전체이용가"}</span>
                     </HotCon>
                   </Link>
                 </HotImgWrap>

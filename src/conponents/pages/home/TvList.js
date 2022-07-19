@@ -114,7 +114,11 @@ export const TvList = ({ tv, red, title }) => {
               <TvImgWrap>
                 <TvImg
                   style={{
-                    background: `url(${imgUrl}${play.backdrop_path}) no-repeat center/cover`,
+                    background: `url(${
+                      play.backdrop_path
+                        ? `${imgUrl}${play.backdrop_path}`
+                        : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                    }) no-repeat center / cover`,
                   }}
                 />
                 <TvCon className="tvcontents">
@@ -122,8 +126,8 @@ export const TvList = ({ tv, red, title }) => {
                   <Genre>
                     <div>장르</div>
                   </Genre>
-                  <p>{play.vote_average}점</p>
-                  <span>{play.adult ? "19+" : "Everybody"}</span>
+                  <p>⭐ {play.vote_average}점</p>
+                  <span>{play.adult ? "19+" : "전체이용가"}</span>
                 </TvCon>
               </TvImgWrap>
             </Link>

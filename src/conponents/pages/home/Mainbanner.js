@@ -29,7 +29,7 @@ const ConWrap = styled.div`
 const Title = styled.h3`
   font-size: 90px;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   @media screen and (max-width: 500px) {
     font-size: 50px;
   }
@@ -37,8 +37,10 @@ const Title = styled.h3`
 
 const BoxWrap = styled.div`
   display: flex;
+
   p {
     font-size: 22px;
+    margin-right: 10px;
   }
 `;
 
@@ -99,10 +101,8 @@ export const Mainbanner = ({ tvPopular }) => {
                 <Title>'{tvPopular[0].name}'</Title>
 
                 <BoxWrap>
-                  <p>
-                    {tvPopular[0].adult ? "19+" : "Everybody"} |
-                    <span>장르</span>| {tvPopular[0].first_air_date}
-                  </p>
+                  <p>{tvPopular[0].first_air_date}</p>
+                  <p>{tvPopular[0].adult ? "19+" : "전체이용가"} </p>{" "}
                 </BoxWrap>
                 <Con>{tvPopular[0].overview.slice(0, 70) + "..."}</Con>
                 <Link to={`/tv_detail/${tvPopular[0].id}`}>
@@ -122,10 +122,8 @@ export const Mainbanner = ({ tvPopular }) => {
                 <Title>'{tvPopular[1].name}'</Title>
 
                 <BoxWrap>
-                  <p>
-                    {tvPopular[1].adult ? "19+" : "Everybody"} |
-                    <span>장르</span>| {tvPopular[1].first_air_date}
-                  </p>
+                  <p>{tvPopular[1].first_air_date}</p>
+                  <p>{tvPopular[1].adult ? "19+" : "전체이용가"} </p>{" "}
                 </BoxWrap>
                 <Con>{tvPopular[1].overview.slice(0, 70) + "..."}</Con>
                 <Link to={`/tv_detail/${tvPopular[1].id}`}>
@@ -145,10 +143,8 @@ export const Mainbanner = ({ tvPopular }) => {
                 <Title>'{tvPopular[2].name}'</Title>
 
                 <BoxWrap>
-                  <p>
-                    {tvPopular[2].adult ? "19+" : "Everybody"} |
-                    <span>장르</span>| {tvPopular[2].first_air_date}
-                  </p>
+                  <p>{tvPopular[2].first_air_date}</p>
+                  <p>{tvPopular[2].adult ? "19+" : "전체이용가"} </p>{" "}
                 </BoxWrap>
                 <Con>{tvPopular[2].overview.slice(0, 70) + "..."}</Con>
                 <Link to={`/tv_detail/${tvPopular[2].id}`}>

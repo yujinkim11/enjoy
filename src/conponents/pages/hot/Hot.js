@@ -6,6 +6,7 @@ import { Loading } from "../../Loading";
 import styled from "styled-components";
 import { HotTvSlide } from "./HotTvSlide";
 import { PageTitle } from "../../PageTitle";
+import { ScrollTop } from "../../../ScrollTop";
 
 const HotWrap = styled.div`
   width: 100%;
@@ -63,6 +64,7 @@ export const Hot = () => {
   // console.log(tvrated);
   return (
     <>
+      <ScrollTop />
       <PageTitle title={"Hot"} />
       {loading ? (
         <Loading />

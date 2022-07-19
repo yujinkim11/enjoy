@@ -120,8 +120,8 @@ export const HotTvSlide = ({ hottvData }) => {
                       {hottv.name}
                     </h1>
                     <Genre></Genre>
-                    <p>{hottv.vote_average}점</p>
-                    <span>{hottv.adult ? "19+" : "Everybody"}</span>
+                    <p>⭐ {hottv.vote_average}점</p>
+                    <span>{hottv.adult ? "19+" : "전체이용가"}</span>
                   </HotCon>
                 </Link>
               </HotImgWrap>

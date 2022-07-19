@@ -119,8 +119,8 @@ export const HotMvSub = ({ mvsubData }) => {
                         {submv.name}
                       </h1>
                       <Genre></Genre>
-                      <p>{submv.vote_average}점</p>
-                      <span>{submv.adult ? "19+" : "Everybody"}</span>
+                      <p>⭐ {submv.vote_average}점</p>
+                      <span>{submv.adult ? "19+" : "전체이용가"}</span>
                     </HotCon>
                   </Link>
                 </HotImgWrap>

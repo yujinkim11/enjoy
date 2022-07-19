@@ -8,6 +8,7 @@ import { PageTitle } from "../../PageTitle";
 import { imgUrl } from "../../../constants/constants";
 import { Link } from "react-router-dom";
 import { mainStyle } from "../../../styles/globalstyle";
+import { ScrollTop } from "../../../ScrollTop";
 
 const SearchWrap = styled.div`
   margin-top: 150px;
@@ -119,7 +120,7 @@ export const Search = () => {
   return (
     <div>
       <PageTitle title={"Search"} />
-
+      <ScrollTop />
       <Container>
         <SearchWrap>
           <form onSubmit={handleSubmit(searchMovie)}>
@@ -150,7 +151,11 @@ export const Search = () => {
                     <Link to={`/mv_detail/${term.id}`}>
                       <Bg
                         style={{
-                          background: `url(${imgUrl}${term.backdrop_path}) no-repeat center / cover`,
+                          background: `url(${
+                            term.backdrop_path
+                              ? `${imgUrl}${term.backdrop_path}`
+                              : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                          }) no-repeat center / cover`,
                         }}
                       ></Bg>
                       <Title>{term.title}</Title>

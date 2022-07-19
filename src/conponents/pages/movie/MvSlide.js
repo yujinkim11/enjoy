@@ -135,9 +135,9 @@ export const MvSlide = ({ mvdata, red, moviecate }) => {
                           </li>
                         ))}
                       </Genre>
-                      <p>{moviedata.vote_average}점</p>
+                      <p>⭐ {moviedata.vote_average}점</p>
 
-                      <span>{moviedata.adult ? "19+" : "Everybody"}</span>
+                      <span>{moviedata.adult ? "19+" : "전체이용가"}</span>
                     </MvCon>
                   </Link>
                 </MovieImgWrap>

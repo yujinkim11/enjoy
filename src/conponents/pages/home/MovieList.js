@@ -79,14 +79,9 @@ const MvImg = styled.div`
   }
 `;
 
-const Genre = styled.div`
+const Genre = styled.ul`
   display: flex;
   font-size: 20px;
-  .genres {
-    width: 15%;
-    height: 100%;
-    background-color: ${mainStyle.mainColor};
-  }
 `;
 
 const params = {
@@ -118,14 +113,23 @@ export const MovieList = ({ movie, red, title }) => {
                     <MvImgWrap>
                       <MvImg
                         style={{
-                          background: `url(${imgUrl}${play.backdrop_path}) no-repeat center/cover`,
+                          background: `url(${
+                            play.backdrop_path
+                              ? `${imgUrl}${play.backdrop_path}`
+                              : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                          }) no-repeat center / cover`,
                         }}
                       />
                       <MvCon className="mvcontents">
                         <h1>{play.title}</h1>
-                        <Genre>장르</Genre>
-                        <p>{play.vote_average}점</p>
-                        <span>{play.adult ? "19+" : "Everybody"}</span>
+                        <Genre>
+                          {play &&
+                            play.genres.map((mvgenre) => (
+                              <li key={mvgenre.id}>▷ {mvgenre.name}</li>
+                            ))}
+                        </Genre>
+                        <p>⭐ {play.vote_average}점</p>
+                        <span>{play.adult ? "19+" : "전체이용가"}</span>
                       </MvCon>
                     </MvImgWrap>
                   </Link>

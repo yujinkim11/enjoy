@@ -5,6 +5,7 @@ import { mvApi } from "../../../api";
 import { Loading } from "../../Loading";
 import { MvSlide } from "./MvSlide";
 import { PageTitle } from "../../PageTitle";
+import { ScrollTop } from "../../../ScrollTop";
 
 const MvProgramWrap = styled.div`
   padding: ${mainStyle.padding};
@@ -66,6 +67,7 @@ export const MovieProgram = (red, title) => {
 
   return (
     <>
+      <ScrollTop />
       <PageTitle title={"Movie"} />
       {loading ? (
         <Loading />

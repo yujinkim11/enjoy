@@ -120,8 +120,8 @@ export const HotMvSlide = ({ hotmvData }) => {
                       {hotmv.name}
                     </h1>
                     <Genre></Genre>
-                    <p>{hotmv.vote_average}점</p>
-                    <span>{hotmv.adult ? "19+" : "Everybody"}</span>
+                    <p>⭐ {hotmv.vote_average}점</p>
+                    <span>{hotmv.adult ? "19+" : "전체이용가"}</span>
                   </HotCon>
                 </Link>
               </HotImgWrap>

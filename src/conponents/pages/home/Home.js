@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { mvApi, tvApi } from "../../../api";
+import { ScrollTop } from "../../../ScrollTop";
 import { Container } from "../../Container";
 import { Loading } from "../../Loading";
 import { PageTitle } from "../../PageTitle";
@@ -61,6 +62,7 @@ export const Home = () => {
 
   return (
     <>
+      <ScrollTop />
       <PageTitle title={"Home"} />
       {loading ? (
         <Loading />

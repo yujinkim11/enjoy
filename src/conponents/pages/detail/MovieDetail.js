@@ -118,8 +118,8 @@ const IFrame = styled.iframe`
   margin-top: 120px;
   @media screen and (max-width: 500px) {
     width: 100%;
-    height: 80vh;
-    margin-top: 100px;
+    height: 70vh;
+    margin-top: 200px;
   }
 `;
 
@@ -151,7 +151,7 @@ export const MovieDetail = () => {
 
   const handleClick = () => {
     window.scrollTo({
-      top: 900,
+      top: 890,
     });
   };
 
