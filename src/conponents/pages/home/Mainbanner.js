@@ -31,7 +31,7 @@ const Title = styled.h3`
   font-weight: 700;
   margin-bottom: 40px;
   @media screen and (max-width: 500px) {
-    font-size: 40px;
+    font-size: 50px;
   }
 `;
 
@@ -51,6 +51,7 @@ const Con = styled.p`
   @media screen and (max-width: 500px) {
     width: 250px;
     font-size: 20px;
+    font-weight: 500;
   }
 `;
 

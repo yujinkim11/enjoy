@@ -34,6 +34,7 @@ const BlackBox = styled.div`
 const TvScore = styled.div`
   margin-bottom: 20px;
   @media screen and (max-width: 500px) {
+    font-size: 20px;
     height: 100vh;
   }
 `;
@@ -52,10 +53,11 @@ const TvGenre = styled.ul`
   li {
     width: 200px;
     height: 200px;
-    background-color: aliceblue;
   }
   @media screen and (max-width: 500px) {
     font-size: 20px;
+    li {
+    }
   }
 `;
 
@@ -66,19 +68,6 @@ const Gen = styled.p`
   }
 `;
 
-const TvTime = styled.div`
-  display: flex;
-  margin-bottom: 20px;
-  p {
-    margin-right: 10px;
-  }
-  span {
-    margin-left: 10px;
-  }
-  @media screen and (max-width: 500px) {
-    font-size: 20px;
-  }
-`;
 const TvCon = styled.p`
   width: 600px;
   font-size: 20px;
@@ -187,10 +176,6 @@ export const TvDetail = () => {
                         <Gen key={tvgenre.id}>▷ {tvgenre.name}</Gen>
                       ))}
                     </TvGenre>
-                    <TvTime>
-                      <p>{tvdetail.release_date}</p> |{" "}
-                      <span>{tvdetail.runtime}분</span>
-                    </TvTime>
                     <TvScore>{tvdetail.vote_average}점</TvScore>
                     <TvCon>{tvdetail.overview.slice(0, 150) + "..."}</TvCon>
                     <MenuWrap>

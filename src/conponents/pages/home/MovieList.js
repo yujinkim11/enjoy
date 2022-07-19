@@ -37,6 +37,12 @@ const MvCon = styled.div`
   position: absolute;
   top: 37%;
   left: 10px;
+  @media screen and (max-width: 500px) {
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    padding-right: 5px;
+  }
 
   h1 {
     font-size: 40px;
@@ -44,6 +50,7 @@ const MvCon = styled.div`
     margin-bottom: 10px;
     @media screen and (max-width: 500px) {
       font-size: 30px;
+      width: 150px;
     }
   }
 
@@ -116,7 +123,7 @@ export const MovieList = ({ movie, red, title }) => {
                       />
                       <MvCon className="mvcontents">
                         <h1>{play.title}</h1>
-                        <Genre></Genre>
+                        <Genre>장르</Genre>
                         <p>{play.vote_average}점</p>
                         <span>{play.adult ? "19+" : "Everybody"}</span>
                       </MvCon>
