@@ -18,11 +18,11 @@ TV, 영화 메뉴로 구성하여 사용자가 콘텐츠 찾기에 용이
 
 ## ✅ 기술요점
 
-react를 사용하여 react-Hooks를 이용하여 구현
-axios로 API를 받아와서 사이트 구현
-styled-components를 이용하여 스타일 지정
-Nodejs 언어를 사용하여 npm 설치
-반응형 작업
+- react를 사용하여 react-Hooks를 이용하여 구현
+- axios로 API를 받아와서 사이트 구현
+- styled-components를 이용하여 스타일 지정
+- Nodejs 언어를 사용하여 npm 설치
+- 반응형 작업
 
 ## 📝 사용언어
 
