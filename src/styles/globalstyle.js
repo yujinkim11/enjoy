@@ -13,6 +13,7 @@ export const GlobalStyled = createGlobalStyle`
     ${reset}
     *{
         box-sizing: border-box;
+        
     }
 
 
@@ -23,6 +24,8 @@ export const GlobalStyled = createGlobalStyle`
         color: ${mainStyle.color};
         letter-spacing: -2px;
         word-break: keep-all;
+        .swiper-button-prev { color: #FF1F5A; }
+        .swiper-button-next { color: #FF1F5A; }
     }
 
     a{

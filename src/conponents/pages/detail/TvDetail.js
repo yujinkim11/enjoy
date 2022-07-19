@@ -43,7 +43,7 @@ const TvTitle = styled.div`
   font-weight: 900;
   margin-bottom: 30px;
   @media screen and (max-width: 500px) {
-    font-size: 60px;
+    font-size: 50px;
   }
 `;
 const TvGenre = styled.ul`
