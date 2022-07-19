@@ -79,11 +79,6 @@ const MvImg = styled.div`
   }
 `;
 
-const Genre = styled.ul`
-  display: flex;
-  font-size: 20px;
-`;
-
 const params = {
   breakpoints: {
     320: {
@@ -122,12 +117,6 @@ export const MovieList = ({ movie, red, title }) => {
                       />
                       <MvCon className="mvcontents">
                         <h1>{play.title}</h1>
-                        <Genre>
-                          {play &&
-                            play.genres.map((mvgenre) => (
-                              <li key={mvgenre.id}>▷ {mvgenre.name}</li>
-                            ))}
-                        </Genre>
                         <p>⭐ {play.vote_average}점</p>
                         <span>{play.adult ? "19+" : "전체이용가"}</span>
                       </MvCon>

@@ -71,16 +71,6 @@ const HotImg = styled.div`
   }
 `;
 
-const Genre = styled.div`
-  display: flex;
-  font-size: 20px;
-  .genres {
-    width: 15%;
-    height: 100%;
-    background-color: ${mainStyle.mainColor};
-  }
-`;
-
 const params = {
   breakpoints: {
     320: {
@@ -118,7 +108,7 @@ export const HotMvSub = ({ mvsubData }) => {
                         {submv.title}
                         {submv.name}
                       </h1>
-                      <Genre></Genre>
+
                       <p>⭐ {submv.vote_average}점</p>
                       <span>{submv.adult ? "19+" : "전체이용가"}</span>
                     </HotCon>

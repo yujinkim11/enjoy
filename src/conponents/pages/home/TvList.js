@@ -79,15 +79,6 @@ const TvImg = styled.div`
   }
 `;
 
-const Genre = styled.div`
-  display: flex;
-  font-size: 20px;
-  .genres {
-    width: 15%;
-    height: 100%;
-    background-color: ${mainStyle.mainColor};
-  }
-`;
 const params = {
   breakpoints: {
     320: {
@@ -123,9 +114,6 @@ export const TvList = ({ tv, red, title }) => {
                 />
                 <TvCon className="tvcontents">
                   <h1>{play.name}</h1>
-                  <Genre>
-                    <div>장르</div>
-                  </Genre>
                   <p>⭐ {play.vote_average}점</p>
                   <span>{play.adult ? "19+" : "전체이용가"}</span>
                 </TvCon>

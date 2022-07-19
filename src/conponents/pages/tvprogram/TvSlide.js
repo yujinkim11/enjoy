@@ -83,17 +83,6 @@ const TvImg = styled.div`
   }
 `;
 
-const Gen = styled.p``;
-
-const Genre = styled.div`
-  display: flex;
-  font-size: 20px;
-  .genres {
-    width: 15%;
-    height: 100%;
-    background-color: ${mainStyle.mainColor};
-  }
-`;
 const params = {
   breakpoints: {
     320: {
@@ -133,12 +122,7 @@ export const TvSlide = ({ data, red, title }) => {
                     />{" "}
                     <TvCon className="tvcontents">
                       <h1>{tvdata.name}</h1>
-                      <Genre>
-                        {/* {tvdata &&
-                          tvdata.genres.map((tvgenre) => (
-                            <Gen key={tvgenre.id}>▷ {tvgenre.name}</Gen>
-                          ))} */}
-                      </Genre>
+
                       <p>⭐ {tvdata.vote_average}점</p>
                       <span>{tvdata.adult ? "19+" : "전체이용가"}</span>
                     </TvCon>

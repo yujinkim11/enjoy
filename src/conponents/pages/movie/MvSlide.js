@@ -76,17 +76,6 @@ const MvImg = styled.div`
   }
 `;
 
-const Genre = styled.ul`
-  font-size: 20px;
-  margin-bottom: 20px;
-  font-weight: 600;
-  display: flex;
-  li {
-    list-style: none;
-    margin-right: 10px;
-  }
-  margin: 0 0 20px 0px;
-`;
 const params = {
   breakpoints: {
     320: {
@@ -127,14 +116,7 @@ export const MvSlide = ({ mvdata, red, moviecate }) => {
 
                     <MvCon className="mvcontents">
                       <h1>{moviedata.title}</h1>
-                      <Genre>
-                        {moviedata.genre_ids.map((genreid) => (
-                          <li key={genreid.id} className="genres">
-                            {genreid.name}
-                            {console.log(genreid)}
-                          </li>
-                        ))}
-                      </Genre>
+
                       <p>⭐ {moviedata.vote_average}점</p>
 
                       <span>{moviedata.adult ? "19+" : "전체이용가"}</span>
