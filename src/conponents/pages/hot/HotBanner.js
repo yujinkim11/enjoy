@@ -158,16 +158,16 @@ export const HotBabnner = ({ bndata }) => {
               >
                 전체
               </span>{" "}
-              <Link to={"/hot_drama"}>
+              <Link to={"/hot_tv"}>
                 <span
                   onClick={() => {
                     setPosi("40%");
                   }}
                 >
-                  드라마
+                  TV프로그램
                 </span>
               </Link>
-              <Link to={"/hot_movie"}>
+              <Link to={"/hot_mv"}>
                 <span
                   onClick={() => {
                     setPosi("0%");

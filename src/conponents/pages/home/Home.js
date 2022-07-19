@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { mvApi, tvApi } from "../../../api";
 import { Container } from "../../Container";
 import { Loading } from "../../Loading";
+import { PageTitle } from "../../PageTitle";
 import { Mainbanner } from "./Mainbanner";
 import { MovieList } from "./MovieList";
 import { TvList } from "./TvList";
@@ -60,6 +61,7 @@ export const Home = () => {
 
   return (
     <>
+      <PageTitle title={"Home"} />
       {loading ? (
         <Loading />
       ) : (

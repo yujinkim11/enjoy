@@ -4,6 +4,7 @@ import { Loading } from "../../Loading";
 import { tvApi } from "../../../api";
 import { useEffect, useState } from "react";
 import { TvSlide } from "./TvSlide";
+import { PageTitle } from "../../PageTitle";
 
 const TvProgramWrap = styled.div`
   padding: ${mainStyle.padding};
@@ -62,6 +63,7 @@ export const TvProgram = () => {
 
   return (
     <>
+      <PageTitle title={"TV"} />
       {loading ? (
         <Loading />
       ) : (

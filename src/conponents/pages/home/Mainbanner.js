@@ -78,8 +78,6 @@ const PlayBox = styled.div`
   }
 `;
 
-const Gen = styled.p``;
-
 export const Mainbanner = ({ tvPopular }) => {
   return (
     <>

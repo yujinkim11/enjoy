@@ -11,8 +11,8 @@ import { Footer } from "./conponents/Footer";
 import { Search } from "./conponents/pages/search/Search";
 import { MovieDetail } from "./conponents/pages/detail/MovieDetail";
 import { TvDetail } from "./conponents/pages/detail/TvDetail";
-import { HotMovie } from "./conponents/pages/hot/HotMovie";
-import { HotDrama } from "./conponents/pages/hot/HotDrama";
+import { HotMv } from "./conponents/pages/hot/HotMv";
+import { HotTv } from "./conponents/pages/hot/HotTv";
 
 function App() {
   return (
@@ -29,8 +29,8 @@ function App() {
           <Route path="/*" element={<NotFound />} />
           <Route path="/tv_detail/:id" element={<TvDetail />} />
           <Route path="/mv_detail/:id" element={<MovieDetail />} />
-          <Route path="/hot_drama" element={<HotDrama />} />
-          <Route path="/hot_movie" element={<HotMovie />} />
+          <Route path="/hot_tv" element={<HotTv />} />
+          <Route path="/hot_mv" element={<HotMv />} />
         </Routes>
         <Footer />
       </Router>

@@ -140,7 +140,6 @@ export const MovieDetail = () => {
       try {
         const { data: detail } = await mvApi.movieDetail(id);
         setMvDetail(detail);
-        console.log(mvdetail);
 
         setMvVideo(results.length === 0 ? null : results[0].key);
 

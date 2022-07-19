@@ -4,8 +4,8 @@ import { HotMvSlide } from "./HotMvSlide";
 import { mvApi, tvApi } from "../../../api";
 import { Loading } from "../../Loading";
 import styled from "styled-components";
-import { mainStyle } from "../../../styles/globalstyle";
 import { HotTvSlide } from "./HotTvSlide";
+import { PageTitle } from "../../PageTitle";
 
 const HotWrap = styled.div`
   width: 100%;
@@ -60,9 +60,10 @@ export const Hot = () => {
     };
     hotData();
   }, []);
-  console.log(tvrated);
+  // console.log(tvrated);
   return (
     <>
+      <PageTitle title={"Hot"} />
       {loading ? (
         <Loading />
       ) : (

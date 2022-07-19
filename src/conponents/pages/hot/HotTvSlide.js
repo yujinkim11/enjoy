@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const SlideWrap = styled.div`
   padding: ${mainStyle.padding};
-  margin-top: 100px;
   width: 100%;
   @media screen and (max-width: 500px) {
     padding: ${mainStyle.moPadding};

@@ -4,6 +4,7 @@ import { mainStyle } from "../../../styles/globalstyle";
 import { mvApi } from "../../../api";
 import { Loading } from "../../Loading";
 import { MvSlide } from "./MvSlide";
+import { PageTitle } from "../../PageTitle";
 
 const MvProgramWrap = styled.div`
   padding: ${mainStyle.padding};
@@ -65,6 +66,7 @@ export const MovieProgram = (red, title) => {
 
   return (
     <>
+      <PageTitle title={"Movie"} />
       {loading ? (
         <Loading />
       ) : (

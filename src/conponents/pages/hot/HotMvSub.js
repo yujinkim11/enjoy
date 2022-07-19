@@ -7,8 +7,6 @@ import { mainStyle } from "../../../styles/globalstyle";
 import { Link } from "react-router-dom";
 
 const SlideWrap = styled.div`
-  padding: ${mainStyle.padding};
-  /* margin-top: 100px; */
   width: 100%;
   @media screen and (max-width: 500px) {
     padding: ${mainStyle.moPadding};
@@ -89,38 +87,38 @@ const params = {
   },
 };
 
-export const HotMvSlide = ({ hotmvData }) => {
-  // console.log("hot", hotData);
+export const HotMvSub = ({ mvsubData }) => {
   return (
     <>
       <SlideWrap>
         <Swiper modules={[Navigation]} navigation {...params}>
-          {hotmvData.map((hotmv) => (
-            <SwiperSlide>
-              <HotImgWrap>
-                <Link to={`/mv_detail/${hotmv.id}`}>
-                  <HotImg
-                    style={{
-                      background: `url(${
-                        hotmv.backdrop_path
-                          ? `${imgUrl}${hotmv.backdrop_path}`
-                          : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
-                      }) no-repeat center / cover`,
-                    }}
-                  />
-                  <HotCon className="hotcontents">
-                    <h1>
-                      {hotmv.title}
-                      {hotmv.name}
-                    </h1>
-                    <Genre></Genre>
-                    <p>{hotmv.vote_average}점</p>
-                    <span>{hotmv.adult ? "19+" : "Everybody"}</span>
-                  </HotCon>
-                </Link>
-              </HotImgWrap>
-            </SwiperSlide>
-          ))}
+          {mvsubData &&
+            mvsubData.map((submv) => (
+              <SwiperSlide>
+                <HotImgWrap>
+                  <Link to={`/tv_detail/${submv.id}`}>
+                    <HotImg
+                      style={{
+                        background: `url(${
+                          submv.backdrop_path
+                            ? `${imgUrl}${submv.backdrop_path}`
+                            : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                        }) no-repeat center / cover`,
+                      }}
+                    />
+                    <HotCon className="hotcontents">
+                      <h1>
+                        {submv.title}
+                        {submv.name}
+                      </h1>
+                      <Genre></Genre>
+                      <p>{submv.vote_average}점</p>
+                      <span>{submv.adult ? "19+" : "Everybody"}</span>
+                    </HotCon>
+                  </Link>
+                </HotImgWrap>
+              </SwiperSlide>
+            ))}
         </Swiper>
       </SlideWrap>
     </>
