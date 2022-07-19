@@ -23,8 +23,8 @@
 ## 📝사용언어
 
 <img src="https://img.shields.io/badge/-javascript-yellow">
-자바스크립트 / Nodejs
-React
+<img src="https://img.shields.io/badge/-Nodejs-green">
+<img src="https://img.shields.io/badge/-React-blue">
 
 ## 📍 작업할 것
 
