@@ -1,4 +1,4 @@
-# 📌프로젝트명 Enjoy
+# 📌프로젝트명: Enjoy
 
 프로젝트 소개 OTT 플랫폼을 기획, 디자인, 구현한 웹사이트입니다.
 
@@ -12,9 +12,11 @@
 TV, 영화 메뉴로 구성하여 사용자가 콘텐츠 찾기에 용이
 장르, 평점, 관람이용가 제공
 
+
 ## 📅 제작 기간
 
 7/5 ~ 7/20 (약 2주 소요)
+
 
 ## ✅ 기술요점
 
@@ -24,6 +26,7 @@ TV, 영화 메뉴로 구성하여 사용자가 콘텐츠 찾기에 용이
 - Nodejs 언어를 사용하여 npm 설치
 - 반응형 작업
 
+
 ## 📝 사용언어
 
 -언어<br/>
@@ -31,6 +34,7 @@ TV, 영화 메뉴로 구성하여 사용자가 콘텐츠 찾기에 용이
 <img src="https://img.shields.io/badge/javascript-orange?style=for-the-badge&logo=Node.js&logoColor=white">
 <br/> -프레임워크<br/>
 <img src="https://img.shields.io/badge/React-informational?style=for-the-badge&logo=React&logoColor=white">
+
 
 ## 📍 작업할 것
 
