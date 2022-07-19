@@ -9,6 +9,9 @@ import { Loading } from "../../Loading";
 const HotTvWrap = styled.div`
   padding: ${mainStyle.padding};
   margin-top: 150px;
+  @media screen and (max-width: 500px) {
+    padding: ${mainStyle.moPadding};
+  }
 `;
 
 const HotTvTitle = styled.h3`
@@ -18,10 +21,20 @@ const HotTvTitle = styled.h3`
   font-weight: 700;
   color: white;
   padding-bottom: 30px;
+  display: flex;
+  align-items: center;
   span {
     font-size: 60px;
     color: ${mainStyle.mainColor};
-    margin-right: 15px;
+    margin-right: 5px;
+    @media screen and (max-width: 500px) {
+      font-size: 40px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 35px;
+
+    padding: ${mainStyle.moPadding};
   }
 `;
 
@@ -74,7 +87,7 @@ export const HotTv = () => {
             <>
               <HotTvWrap>
                 <HotTvTitle>
-                  <span>HOT!</span>한 TV 프로그램
+                  <span>HOT!</span>한 TV프로그램
                 </HotTvTitle>
                 <HotTvSub tvsubData={tvpop} />
                 <HotTvSub tvsubData={tvrated} />

@@ -8,6 +8,9 @@ import { HotMvSub } from "./HotMvSub";
 const HotMvWrap = styled.div`
   padding: ${mainStyle.padding};
   margin-top: 150px;
+  @media screen and (max-width: 500px) {
+    padding: ${mainStyle.moPadding};
+  }
 `;
 
 const HotMvTitle = styled.h3`
@@ -17,10 +20,18 @@ const HotMvTitle = styled.h3`
   font-weight: 700;
   color: white;
   padding-bottom: 30px;
+  display: flex;
+  align-items: center;
   span {
     font-size: 60px;
     color: ${mainStyle.mainColor};
-    margin-right: 15px;
+    margin-right: 5px;
+    @media screen and (max-width: 500px) {
+      font-size: 40px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 35px;
   }
 `;
 
