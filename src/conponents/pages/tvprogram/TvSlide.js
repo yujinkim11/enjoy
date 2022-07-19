@@ -5,10 +5,14 @@ import { imgUrl } from "../../../constants/constants";
 import { Navigation } from "swiper";
 import { mainStyle } from "../../../styles/globalstyle";
 import { Link } from "react-router-dom";
+import { Loading } from "../../Loading";
 
 const SlideWrap = styled.div`
   margin-top: 100px;
   width: 100%;
+  @media screen and (max-width: 500px) {
+    margin-top: 0;
+  }
 `;
 
 const TvImgWrap = styled.div`
@@ -34,6 +38,12 @@ const TvCon = styled.div`
   position: absolute;
   top: 37%;
   left: 10px;
+  @media screen and (max-width: 500px) {
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    padding-right: 5px;
+  }
 
   h1 {
     font-size: 40px;
@@ -41,6 +51,7 @@ const TvCon = styled.div`
     margin-bottom: 10px;
     @media screen and (max-width: 500px) {
       font-size: 30px;
+      width: 150px;
     }
   }
 
@@ -67,7 +78,12 @@ const TvImg = styled.div`
     transition: 0.5s;
     opacity: 0.5;
   }
+  @media screen and (max-width: 500px) {
+    margin: 30px 0;
+  }
 `;
+
+const Gen = styled.p``;
 
 const Genre = styled.div`
   display: flex;
@@ -92,42 +108,47 @@ const params = {
 };
 
 export const TvSlide = ({ data, red, title }) => {
-  // console.log(data);
   return (
-    <SlideWrap>
-      <TvTitle>
-        <span>{red}</span>
-        {title}
-      </TvTitle>
-      <Swiper modules={[Navigation]} navigation {...params}>
-        {data.map((tvdata) => (
-          <SwiperSlide>
-            <TvImgWrap>
-              <Link to={`/tv_detail/${tvdata.id}`}>
-                <TvImg
-                  style={{
-                    background: `url(${
-                      tvdata.backdrop_path
-                        ? `${imgUrl}/${tvdata.poster_path}`
-                        : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
-                    }) no-repeat center / cover`,
-                  }}
-                />{" "}
-                <TvCon className="tvcontents">
-                  <h1>{tvdata.name}</h1>
-                  <Genre>
-                    {tvdata.genre_ids.map((genreid) => (
-                      <div className="genres">{genreid}</div>
-                    ))}
-                  </Genre>
-                  <p>{tvdata.vote_average}점</p>
-                  <span>{tvdata.adult ? "19+" : "Everybody"}</span>
-                </TvCon>
-              </Link>
-            </TvImgWrap>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </SlideWrap>
+    <>
+      {/* {data && ( */}
+      <SlideWrap>
+        <TvTitle>
+          <span>{red}</span>
+          {title}
+        </TvTitle>
+        <Swiper modules={[Navigation]} navigation {...params}>
+          {data &&
+            data.map((tvdata) => (
+              <SwiperSlide>
+                <TvImgWrap>
+                  <Link to={`/tv_detail/${tvdata.id}`}>
+                    <TvImg
+                      style={{
+                        background: `url(${
+                          tvdata.backdrop_path
+                            ? `${imgUrl}/${tvdata.poster_path}`
+                            : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png"
+                        }) no-repeat center / cover`,
+                      }}
+                    />{" "}
+                    <TvCon className="tvcontents">
+                      <h1>{tvdata.name}</h1>
+                      <Genre>
+                        {/* {tvdata &&
+                          tvdata.genres.map((tvgenre) => (
+                            <Gen key={tvgenre.id}>▷ {tvgenre.name}</Gen>
+                          ))} */}
+                      </Genre>
+                      <p>{tvdata.vote_average}점</p>
+                      <span>{tvdata.adult ? "19+" : "Everybody"}</span>
+                    </TvCon>
+                  </Link>
+                </TvImgWrap>
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </SlideWrap>
+      {/* )} */}
+    </>
   );
 };

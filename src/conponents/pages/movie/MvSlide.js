@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 const SlideWrap = styled.div`
   margin-top: 100px;
   width: 100%;
+  @media screen and (max-width: 500px) {
+    margin-top: 0;
+  }
 `;
 
 const MovieImgWrap = styled.div`
@@ -34,11 +37,21 @@ const MvCon = styled.div`
   position: absolute;
   top: 37%;
   left: 10px;
+  @media screen and (max-width: 500px) {
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    padding-right: 5px;
+  }
 
   h1 {
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 10px;
+    @media screen and (max-width: 500px) {
+      font-size: 30px;
+      width: 150px;
+    }
   }
 
   p {
@@ -57,6 +70,9 @@ const MvImg = styled.div`
     transform: scale(1.05, 1.05);
     transition: 0.5s;
     opacity: 0.5;
+  }
+  @media screen and (max-width: 500px) {
+    margin: 30px 0;
   }
 `;
 
