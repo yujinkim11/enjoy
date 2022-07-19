@@ -22,8 +22,8 @@
 
 ## 📝사용언어
 
-<img src="https://img.shields.io/badge/-javascript-yellow">
-<img src="https://img.shields.io/badge/-Nodejs-green">
+-언어<br/>
+<img src="https://img.shields.io/badge/-javascript-yellow"> <img src="https://img.shields.io/badge/-Nodejs-green"><br/> -프레임워크<br/>
 <img src="https://img.shields.io/badge/-React-blue">
 
 ## 📍 작업할 것
